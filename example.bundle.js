@@ -5987,7 +5987,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_3__["OrbitsScene"], {
+
+function Redirector(_ref) {
+  var children = _ref.children;
+
+  if (window.location.href.indexOf("~") > -1) {
+    var history = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["useHistory"])();
+    history.push(location.search.replace(/\?q=/, '').replace(/~/g, "/"));
+  }
+
+  return children;
+}
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Redirector, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_3__["OrbitsScene"], {
   renderInterval: 10 // optional, default: 40 (ms)
   // onUpdateControls={ e => console.log("onUpdateControls", e.target.distance) }
   ,
@@ -6232,7 +6244,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
   path: "/link2"
 }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Link 2"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/link3"
-}, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Link 3"), " ")))))), document.getElementById("app"));
+}, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Link 3"), " "))))))), document.getElementById("app"));
 
 /***/ }),
 
