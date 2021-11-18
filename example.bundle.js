@@ -90,7 +90,7 @@
 /*!************************************!*\
   !*** ../hq/orbits-engine/index.js ***!
   \************************************/
-/*! exports provided: OrbitsScene, Object3Component, Box, Circle, Cone, Cylinder, Dodecahedron, Extrude, Icosahedron, Lathe, Octahedron, Plane, Polyhedron, Ring, Shape, Sphere, Tetrahedron, Torus, TorusKnot, Tube, AmbientLight, PointLight, SpotLight, DirectionalLight, Fog, ObjLoader, Audio, AudioEffect, PositionalAudio */
+/*! exports provided: OrbitsScene, Object3Component, Point, Points, Line, Box, Circle, Cone, Cylinder, Dodecahedron, Extrude, Icosahedron, Lathe, Octahedron, Plane, Polyhedron, Ring, Shape, Sphere, Tetrahedron, Torus, TorusKnot, Tube, Text, Sprite, AmbientLight, PointLight, SpotLight, DirectionalLight, Fog, ObjLoader, Audio, AudioEffect, PositionalAudio, Group, CameraControls */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -119,68 +119,97 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_components_ObjLoader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/components/ObjLoader */ "../hq/orbits-engine/lib/components/ObjLoader.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ObjLoader", function() { return _lib_components_ObjLoader__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/components/geometries/Box */ "../hq/orbits-engine/lib/components/geometries/Box.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Box", function() { return _lib_components_geometries_Box__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+/* harmony import */ var _lib_components_geometries_Point__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/components/geometries/Point */ "../hq/orbits-engine/lib/components/geometries/Point.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Point", function() { return _lib_components_geometries_Point__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Circle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/components/geometries/Circle */ "../hq/orbits-engine/lib/components/geometries/Circle.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Circle", function() { return _lib_components_geometries_Circle__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+/* harmony import */ var _lib_components_geometries_Points__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/components/geometries/Points */ "../hq/orbits-engine/lib/components/geometries/Points.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Points", function() { return _lib_components_geometries_Points__WEBPACK_IMPORTED_MODULE_9__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Cone__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/components/geometries/Cone */ "../hq/orbits-engine/lib/components/geometries/Cone.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cone", function() { return _lib_components_geometries_Cone__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+/* harmony import */ var _lib_components_geometries_Line__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/components/geometries/Line */ "../hq/orbits-engine/lib/components/geometries/Line.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Line", function() { return _lib_components_geometries_Line__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Cylinder__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/components/geometries/Cylinder */ "../hq/orbits-engine/lib/components/geometries/Cylinder.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cylinder", function() { return _lib_components_geometries_Cylinder__WEBPACK_IMPORTED_MODULE_11__["default"]; });
+/* harmony import */ var _lib_components_geometries_Box__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/components/geometries/Box */ "../hq/orbits-engine/lib/components/geometries/Box.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Box", function() { return _lib_components_geometries_Box__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Dodecahedron__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lib/components/geometries/Dodecahedron */ "../hq/orbits-engine/lib/components/geometries/Dodecahedron.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Dodecahedron", function() { return _lib_components_geometries_Dodecahedron__WEBPACK_IMPORTED_MODULE_12__["default"]; });
+/* harmony import */ var _lib_components_geometries_Circle__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lib/components/geometries/Circle */ "../hq/orbits-engine/lib/components/geometries/Circle.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Circle", function() { return _lib_components_geometries_Circle__WEBPACK_IMPORTED_MODULE_12__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Extrude__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./lib/components/geometries/Extrude */ "../hq/orbits-engine/lib/components/geometries/Extrude.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Extrude", function() { return _lib_components_geometries_Extrude__WEBPACK_IMPORTED_MODULE_13__["default"]; });
+/* harmony import */ var _lib_components_geometries_Cone__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./lib/components/geometries/Cone */ "../hq/orbits-engine/lib/components/geometries/Cone.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cone", function() { return _lib_components_geometries_Cone__WEBPACK_IMPORTED_MODULE_13__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Icosahedron__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lib/components/geometries/Icosahedron */ "../hq/orbits-engine/lib/components/geometries/Icosahedron.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Icosahedron", function() { return _lib_components_geometries_Icosahedron__WEBPACK_IMPORTED_MODULE_14__["default"]; });
+/* harmony import */ var _lib_components_geometries_Cylinder__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lib/components/geometries/Cylinder */ "../hq/orbits-engine/lib/components/geometries/Cylinder.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cylinder", function() { return _lib_components_geometries_Cylinder__WEBPACK_IMPORTED_MODULE_14__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Lathe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./lib/components/geometries/Lathe */ "../hq/orbits-engine/lib/components/geometries/Lathe.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Lathe", function() { return _lib_components_geometries_Lathe__WEBPACK_IMPORTED_MODULE_15__["default"]; });
+/* harmony import */ var _lib_components_geometries_Dodecahedron__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./lib/components/geometries/Dodecahedron */ "../hq/orbits-engine/lib/components/geometries/Dodecahedron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Dodecahedron", function() { return _lib_components_geometries_Dodecahedron__WEBPACK_IMPORTED_MODULE_15__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Octahedron__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./lib/components/geometries/Octahedron */ "../hq/orbits-engine/lib/components/geometries/Octahedron.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Octahedron", function() { return _lib_components_geometries_Octahedron__WEBPACK_IMPORTED_MODULE_16__["default"]; });
+/* harmony import */ var _lib_components_geometries_Extrude__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./lib/components/geometries/Extrude */ "../hq/orbits-engine/lib/components/geometries/Extrude.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Extrude", function() { return _lib_components_geometries_Extrude__WEBPACK_IMPORTED_MODULE_16__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Plane__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./lib/components/geometries/Plane */ "../hq/orbits-engine/lib/components/geometries/Plane.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Plane", function() { return _lib_components_geometries_Plane__WEBPACK_IMPORTED_MODULE_17__["default"]; });
+/* harmony import */ var _lib_components_geometries_Icosahedron__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./lib/components/geometries/Icosahedron */ "../hq/orbits-engine/lib/components/geometries/Icosahedron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Icosahedron", function() { return _lib_components_geometries_Icosahedron__WEBPACK_IMPORTED_MODULE_17__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Polyhedron__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./lib/components/geometries/Polyhedron */ "../hq/orbits-engine/lib/components/geometries/Polyhedron.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Polyhedron", function() { return _lib_components_geometries_Polyhedron__WEBPACK_IMPORTED_MODULE_18__["default"]; });
+/* harmony import */ var _lib_components_geometries_Lathe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./lib/components/geometries/Lathe */ "../hq/orbits-engine/lib/components/geometries/Lathe.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Lathe", function() { return _lib_components_geometries_Lathe__WEBPACK_IMPORTED_MODULE_18__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Ring__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./lib/components/geometries/Ring */ "../hq/orbits-engine/lib/components/geometries/Ring.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Ring", function() { return _lib_components_geometries_Ring__WEBPACK_IMPORTED_MODULE_19__["default"]; });
+/* harmony import */ var _lib_components_geometries_Octahedron__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./lib/components/geometries/Octahedron */ "../hq/orbits-engine/lib/components/geometries/Octahedron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Octahedron", function() { return _lib_components_geometries_Octahedron__WEBPACK_IMPORTED_MODULE_19__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Shape__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lib/components/geometries/Shape */ "../hq/orbits-engine/lib/components/geometries/Shape.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Shape", function() { return _lib_components_geometries_Shape__WEBPACK_IMPORTED_MODULE_20__["default"]; });
+/* harmony import */ var _lib_components_geometries_Plane__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lib/components/geometries/Plane */ "../hq/orbits-engine/lib/components/geometries/Plane.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Plane", function() { return _lib_components_geometries_Plane__WEBPACK_IMPORTED_MODULE_20__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Sphere__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./lib/components/geometries/Sphere */ "../hq/orbits-engine/lib/components/geometries/Sphere.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sphere", function() { return _lib_components_geometries_Sphere__WEBPACK_IMPORTED_MODULE_21__["default"]; });
+/* harmony import */ var _lib_components_geometries_Polyhedron__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./lib/components/geometries/Polyhedron */ "../hq/orbits-engine/lib/components/geometries/Polyhedron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Polyhedron", function() { return _lib_components_geometries_Polyhedron__WEBPACK_IMPORTED_MODULE_21__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Tetrahedron__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./lib/components/geometries/Tetrahedron */ "../hq/orbits-engine/lib/components/geometries/Tetrahedron.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tetrahedron", function() { return _lib_components_geometries_Tetrahedron__WEBPACK_IMPORTED_MODULE_22__["default"]; });
+/* harmony import */ var _lib_components_geometries_Ring__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./lib/components/geometries/Ring */ "../hq/orbits-engine/lib/components/geometries/Ring.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Ring", function() { return _lib_components_geometries_Ring__WEBPACK_IMPORTED_MODULE_22__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Torus__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./lib/components/geometries/Torus */ "../hq/orbits-engine/lib/components/geometries/Torus.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Torus", function() { return _lib_components_geometries_Torus__WEBPACK_IMPORTED_MODULE_23__["default"]; });
+/* harmony import */ var _lib_components_geometries_Shape__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./lib/components/geometries/Shape */ "../hq/orbits-engine/lib/components/geometries/Shape.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Shape", function() { return _lib_components_geometries_Shape__WEBPACK_IMPORTED_MODULE_23__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_TorusKnot__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./lib/components/geometries/TorusKnot */ "../hq/orbits-engine/lib/components/geometries/TorusKnot.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TorusKnot", function() { return _lib_components_geometries_TorusKnot__WEBPACK_IMPORTED_MODULE_24__["default"]; });
+/* harmony import */ var _lib_components_geometries_Sphere__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./lib/components/geometries/Sphere */ "../hq/orbits-engine/lib/components/geometries/Sphere.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sphere", function() { return _lib_components_geometries_Sphere__WEBPACK_IMPORTED_MODULE_24__["default"]; });
 
-/* harmony import */ var _lib_components_geometries_Tube__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./lib/components/geometries/Tube */ "../hq/orbits-engine/lib/components/geometries/Tube.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tube", function() { return _lib_components_geometries_Tube__WEBPACK_IMPORTED_MODULE_25__["default"]; });
+/* harmony import */ var _lib_components_geometries_Tetrahedron__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./lib/components/geometries/Tetrahedron */ "../hq/orbits-engine/lib/components/geometries/Tetrahedron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tetrahedron", function() { return _lib_components_geometries_Tetrahedron__WEBPACK_IMPORTED_MODULE_25__["default"]; });
 
-/* harmony import */ var _lib_components_Audio__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./lib/components/Audio */ "../hq/orbits-engine/lib/components/Audio.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Audio", function() { return _lib_components_Audio__WEBPACK_IMPORTED_MODULE_26__["default"]; });
+/* harmony import */ var _lib_components_geometries_Torus__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./lib/components/geometries/Torus */ "../hq/orbits-engine/lib/components/geometries/Torus.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Torus", function() { return _lib_components_geometries_Torus__WEBPACK_IMPORTED_MODULE_26__["default"]; });
 
-/* harmony import */ var _lib_components_AudioEffect__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./lib/components/AudioEffect */ "../hq/orbits-engine/lib/components/AudioEffect.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AudioEffect", function() { return _lib_components_AudioEffect__WEBPACK_IMPORTED_MODULE_27__["default"]; });
+/* harmony import */ var _lib_components_geometries_TorusKnot__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./lib/components/geometries/TorusKnot */ "../hq/orbits-engine/lib/components/geometries/TorusKnot.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TorusKnot", function() { return _lib_components_geometries_TorusKnot__WEBPACK_IMPORTED_MODULE_27__["default"]; });
 
-/* harmony import */ var _lib_components_PositionalAudio__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./lib/components/PositionalAudio */ "../hq/orbits-engine/lib/components/PositionalAudio.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionalAudio", function() { return _lib_components_PositionalAudio__WEBPACK_IMPORTED_MODULE_28__["default"]; });
+/* harmony import */ var _lib_components_geometries_Tube__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./lib/components/geometries/Tube */ "../hq/orbits-engine/lib/components/geometries/Tube.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tube", function() { return _lib_components_geometries_Tube__WEBPACK_IMPORTED_MODULE_28__["default"]; });
+
+/* harmony import */ var _lib_components_geometries_Text__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./lib/components/geometries/Text */ "../hq/orbits-engine/lib/components/geometries/Text.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Text", function() { return _lib_components_geometries_Text__WEBPACK_IMPORTED_MODULE_29__["default"]; });
+
+/* harmony import */ var _lib_components_geometries_Sprite__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./lib/components/geometries/Sprite */ "../hq/orbits-engine/lib/components/geometries/Sprite.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sprite", function() { return _lib_components_geometries_Sprite__WEBPACK_IMPORTED_MODULE_30__["default"]; });
+
+/* harmony import */ var _lib_components_Audio__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./lib/components/Audio */ "../hq/orbits-engine/lib/components/Audio.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Audio", function() { return _lib_components_Audio__WEBPACK_IMPORTED_MODULE_31__["default"]; });
+
+/* harmony import */ var _lib_components_AudioEffect__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./lib/components/AudioEffect */ "../hq/orbits-engine/lib/components/AudioEffect.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AudioEffect", function() { return _lib_components_AudioEffect__WEBPACK_IMPORTED_MODULE_32__["default"]; });
+
+/* harmony import */ var _lib_components_PositionalAudio__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./lib/components/PositionalAudio */ "../hq/orbits-engine/lib/components/PositionalAudio.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionalAudio", function() { return _lib_components_PositionalAudio__WEBPACK_IMPORTED_MODULE_33__["default"]; });
+
+/* harmony import */ var _lib_components_Group__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./lib/components/Group */ "../hq/orbits-engine/lib/components/Group.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Group", function() { return _lib_components_Group__WEBPACK_IMPORTED_MODULE_34__["default"]; });
+
+/* harmony import */ var _lib_components_CameraControls__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./lib/components/CameraControls */ "../hq/orbits-engine/lib/components/CameraControls.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CameraControls", function() { return _lib_components_CameraControls__WEBPACK_IMPORTED_MODULE_35__["default"]; });
+
+
+
+
+
+
+
+
 
 
 
@@ -341,46 +370,19 @@ class InteractionManager {
     }
   }
 
-  add(object, childNames = []){
-    if (object) {
-      if (childNames.length > 0) {
-        childNames.forEach((name) => {
-          const o = object.getObjectByName(name);
-          if (o) {
-            const interactiveObject = new InteractiveObject(o, name);
-            this.interactiveObjects.push(interactiveObject);
-          }
-        });
-      } else {
-        const interactiveObject = new InteractiveObject(object, object.name);
-        this.interactiveObjects.push(interactiveObject);
-      }
-    }
+  add(object){
+    if (object) this.interactiveObjects.push(new InteractiveObject(object, object.name));
   }
 
-  remove(object, childNames = []){
-    if (object) {
-      if (childNames.length > 0) {
-        const interactiveObjectsNew = [];
-        this.interactiveObjects.forEach((o) => {
-          if (!childNames.includes(o.name)) {
-            interactiveObjectsNew.push(o);
-          }
-        });
-        this.interactiveObjects = interactiveObjectsNew;
-      } else {
-        const interactiveObjectsNew = [];
-        this.interactiveObjects.forEach((o) => {
-          if (o.name !== object.name) {
-            interactiveObjectsNew.push(o);
-          }
-        });
-        this.interactiveObjects = interactiveObjectsNew;
-      }
-    }
+  remove(object){
+    if (object) this.interactiveObjects = this.interactiveObjects.filter( ({target}) => target !== object );
   }
 
   update(){
+
+
+    // console.log("update???");
+
     this.raycaster.setFromCamera(this.mouse, this.camera);
 
     const intersections = [];
@@ -398,16 +400,19 @@ class InteractionManager {
 
     const closest = intersections.shift();
 
+    if (closest && ( closest === this.__interacting_object ) ) return;
+    
     if(closest){
-      if (closest === this.__interacting_object) return;
       if(this.__interacting_object) {
         this.dispatch(this.__interacting_object, new InteractiveEvent('mouseout'));
       }
       this.dispatch(closest, new InteractiveEvent('mouseover'));
       this.__interacting_object = closest;
     }
+
     else if(this.__interacting_object){
-      this.dispatch(this.__interacting_object, new InteractiveEvent('mouseout'));
+      let e;
+      this.dispatch(this.__interacting_object, e = new InteractiveEvent('mouseout'));
       this.__interacting_object = null;
     }
     else {
@@ -460,7 +465,7 @@ class InteractionManager {
   }
 
   onDocumentMouseMove(mouseEvent){
-    // event.preventDefault();
+    mouseEvent.target.tagName === "CANVAS" && mouseEvent.preventDefault();
 
     this.mapPositionToPoint(this.mouse, mouseEvent.clientX, mouseEvent.clientY);
 
@@ -503,17 +508,11 @@ class InteractionManager {
   }
 
   onMouseDown(mouseEvent){
-    this.mapPositionToPoint(this.mouse, mouseEvent.clientX, mouseEvent.clientY);
-
-    this.update();
-
-    const event = new InteractiveEvent('mousedown', mouseEvent);
-
-    this.interactiveObjects.forEach((object) => {
-      if (object.intersected) {
-        this.dispatch(object, event);
-      }
-    });
+    mouseEvent.preventDefault();
+    this.__interacting_object && this.dispatch(
+      this.__interacting_object,
+      new InteractiveEvent('mousedown', mouseEvent)
+    );
   }
 
   onTouchStart(touchEvent){
@@ -538,11 +537,10 @@ class InteractionManager {
   }
 
   onMouseUp(mouseEvent){
-    const event = new InteractiveEvent('mouseup', mouseEvent);
-
-    this.interactiveObjects.forEach((object) => {
-      this.dispatch(object, event);
-    });
+    this.__interacting_object && this.dispatch(
+      this.__interacting_object,
+      new InteractiveEvent('mouseup', mouseEvent)
+    );
   }
 
   onTouchEnd(touchEvent){
@@ -642,207 +640,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrbitsSceneProvider", function() { return OrbitsSceneProvider; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
-/* harmony import */ var _orbits_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @orbits/timer */ "../hq/orbits-engine/node_modules/@orbits/timer/index.js");
-/* harmony import */ var _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_orbits_timer__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _orbits_timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/timer */ "../hq/orbits-engine/node_modules/@orbits/timer/index.js");
+/* harmony import */ var _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_orbits_timer__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "../hq/orbits-engine/lib/utils.js");
 
 
 
+
+
+
+const {
+	BoxHelper,
+	MaterialLoader, FrontSide, BackSide, DoubleSide,
+	TextureLoader,
+	MeshPhongMaterial, // Needed as default material
+} = three__WEBPACK_IMPORTED_MODULE_2__;
 
 
 // Detect if value is react component or react element
 // https://stackoverflow.com/questions/33199959/how-to-detect-a-react-component-vs-a-react-element
-
-const default0 = ({ x = 0, y = 0, z = 0 } = {}) => ({ x, y, z });
-const default1 = ({ x = 1, y = 1, z = 1 } = {}) => ({ x, y, z });
-
-const vecDiff = (base, target) => {
-	return {
-		x: target.x - base.x,
-		y: target.y - base.y,
-		z: target.z - base.z,
-	};
-}
-
-const multiplyScalar = (vec, scalar) => ({ x: vec.x * scalar,  y: vec.y * scalar,  z: vec.z * scalar   });
-const vecAdd         = (vec1, vec2)  => ({ x: vec1.x + vec2.x, y: vec1.y + vec2.y, z: vec1.z + vec2.z  });
-
-const colorDiff = (col1, col2) => {
-	return { r: col2.r - col1.r, g: col2.g - col1.g, b: col2.b - col1.b, };
-}
-
-const deconstructColor = (color) => {
-	return {
-		r: parseInt("0x" + color[1] + color[2], 16),
-		g: parseInt("0x" + color[3] + color[4], 16),
-		b: parseInt("0x" + color[5] + color[6], 16),
-	}
-}
-
-const colorAdd = (c1, c2) => ({ r: c1.r + c2.r, g: c1.g + c2.g, b: c1.b + c2.b });
-const multiplyColor = ({r,g,b}, n) => ({r : Math.round(r*n), g: Math.round(g*n), b: Math.round(b*n)});
-const stringifyColor = ({r, g, b}) => {
-	return "#" + [
-		(r < 0x10 ? "0" : "" ) + r.toString(16),
-		(g < 0x10 ? "0" : "" ) + g.toString(16),
-		(b < 0x10 ? "0" : "" ) + b.toString(16),
-	].join("");
-}
-
-const globalHandlers = {
-	
-	// Always bound events
-	onMouseOver: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
-		// First enable all to get ahead of handlers exceptions
-		e.target.userData.binds.enableMouseMove();
-		e.target.userData.binds.enableMouseDown();
-		e.target.userData.binds.enableMouseUp();
-		e.target.userData.binds.enableClick();
-
-		this.props.hover && this.setState({__hover: this.props.hover})
-
-		// this.context.scene.setCursor(props.cursor);
-
-		props.onMouseOver && props.onMouseOver(e);
-		props.onMouseMove && props.onMouseMove(e);
-		
-	},
-
-	onMouseOut: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
-		// First disable all to get ahead of handlers exceptions
-		e.target.userData.binds.disableMouseMove();
-		e.target.userData.binds.disableMouseUp();
-		e.target.userData.binds.disableMouseDown();
-		e.target.userData.binds.disableClick();
-
-		this.setState({__hover: null})
-
-		// this.context.scene.setCursor(null);
-
-		props.onMouseOut && props.onMouseOut(e);
-	},
-
-	// Primary handlers (will be enabled after mouse enter and disabled after mouseout)
-	onMouseDown: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
-		e.stopPropagation();
-		markers.downButton = e.originalEvent.button;
-		props.onMouseDown && props.onMouseDown(e);
-		markers.awaitHold = setTimeout(() => {
-			markers.awaitHold = 0;
-			props.onHold && props.onHold(e);
-			// Alter markers.downButton to prevent trigger click after mouseup
-			markers.downButton = -1;
-		}, 1000 );
-	},
-
-	onMouseUp: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
-		e.stopPropagation();
-		markers.upButton = e.originalEvent.button;
-		props.onMouseUp && props.onMouseUp(e);
-		markers.enableClick && e.target.userData.binds.onClick(e);
-		markers.awaitHold && clearTimeout(markers.awaitHold)
-	},
-
-	onMouseMove: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
-		e.stopPropagation();
-		props.onMouseMove && props.onMouseMove(e);
-	},
-
-	// Artific
-	onClick: function(e, props=this.props, markers=this.interactionCollider.userData.markers, binds=this.interactionCollider.userData.binds){
-
-		if((markers.downButton !== markers.upButton)){
-			markers.lastClick = 0;
-			return;
-		}
-
-		switch(markers.upButton){
-			case 0: {
-				// Handle Double Click
-				if(markers.lastClick && Date.now() - markers.lastClick < 150){
-					props.onDoubleClick && props.onDoubleClick(e);
-					markers.lastClick = 0;
-				}
-				// Handle single click
-				else{
-					markers.lastClick = Date.now();
-					props.onClick && props.onClick(e);
-				}
-				break;
-			}
-
-			case 1: {
-					markers.lastClick = 0;
-					props.onMiddleClick && props.onMiddleClick(e);
-					break;
-			}
-			case 2: {
-					markers.lastClick = 0;
-					props.onContext && props.onContext(e);
-					break;
-			}
-		}
-	},
-
-	// Helper Function 
-	enableMouseMove: function(){
-		this.interactionCollider.addEventListener("mousemove", this.interactionCollider.userData.binds.onMouseMove);
-	},
-	
-	disableMouseMove: function(){
-		this.interactionCollider.removeEventListener("mousemove", this.interactionCollider.userData.binds.onMouseMove);
-	},
-
-	enableMouseDown: function(){
-		this.interactionCollider.addEventListener("mousedown", this.interactionCollider.userData.binds.onMouseDown);
-	},
-	
-	disableMouseDown: function(){
-		this.interactionCollider.removeEventListener("mousedown", this.interactionCollider.userData.binds.onMouseDown);
-	},
-
-	enableMouseUp: function(){
-		this.interactionCollider.addEventListener("mouseup", this.interactionCollider.userData.binds.onMouseUp);
-	},
-	
-	disableMouseUp: function(){
-		this.interactionCollider.removeEventListener("mouseup", this.interactionCollider.userData.binds.onMouseUp);
-		const markers = this.interactionCollider.userData.markers
-		markers.awaitHold && clearTimeout(markers.awaitHold)
-		markers.awaitHold = 0;
-	},
-
-	enableClick: function(markers=this.interactionCollider.userData.markers){
-		markers.enableClick=true;
-		markers.lastClick = 0;
-	},
-
-	disableClick: function(markers=this.interactionCollider.userData.markers){
-		markers.enableClick=false;
-	},
-};
-
-const interactionPropsNames = [
-	"hover",
-	"cursor",
-	"onClick",
-	"onDoubleClick",
-	"onMiddleClick",
-	"onContext",
-	"onHold",
-	"onMouseDown",
-	"onMouseUp",
-	"onMouseOver",
-	"onMouseOut",
-	"onMouseMove",
-	"onTouchStart",
-	"onTouchCancel",
-	"onTouchMove",
-	"onTouchEnd",
-	"interactive",
-];
-
-const handlerNames = Object.keys(globalHandlers);
 
 class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
@@ -852,41 +669,148 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 		this.timer_hooks = [];
 	}
 
+	// Here starts mounting of threejs element
+	UNSAFE_componentWillMount(){
+		this.loadElement(
+			this.props.geometry,
+			this.props.material,
+		).then( () => {
+			this.mountElement();
+			if(this.element){
+				this.props.hasOwnProperty("castShadow")    && (this.element.castShadow    = this.props.castShadow    );
+				this.props.hasOwnProperty("receiveShadow") && (this.element.receiveShadow = this.props.receiveShadow );
+				this.element.needsUpdate = true;
+			}
+			this.mountInteraction();
+			this.UNSAFE_componentWillReceiveProps(this.props);
+			this.props.debug && console.log(this.constructor.name, this.props.id, {
+				hasInteractions: this.hasInteractions(this.props),
+				element: this.element,
+				props: { ...this.props },
+			});
+		});
+	}
+
+	// Here will be handled sync or async model loading
+	async loadElement(geometry, material){
+		// Load geometry from url if it is specified
+		if(geometry && typeof geometry === "string") await this.loadGeometry();
+
+		if(material){
+			// Load material from url
+			if(typeof material === "string" || material.src) {
+				const src = typeof material === "string" ? material : material.src;
+				const props = typeof material === "string" ? {} : material;
+				await this.loadMaterial(src, props);
+			}
+			else {
+				const {textures, ...props} = material;
+				const maps = {};
+				if(textures){
+					for(let mapName in textures){
+						maps[mapName] = await this.loadTexture(textures[mapName]);
+					}
+				}
+				this.createMaterial({...props, textures: maps});
+			}
+
+		}
+	}
+
+	// Creates material from provided object
+	createMaterial({ type, textures, ...props}){
+		const Proto = three__WEBPACK_IMPORTED_MODULE_2__[type] || three__WEBPACK_IMPORTED_MODULE_2__["MeshPhongMaterial"];
+		this.material = new Proto(Object(_utils__WEBPACK_IMPORTED_MODULE_3__["convertMaterialProps"])(props, textures));
+	}
+
+	loadTexture(src){
+		return new Promise( (done, reject) => {
+			(new TextureLoader()).load( src, texture => {
+				console.log({texture});
+				done(texture);
+			}, xhr => {}, 
+			err => reject(err)
+			);
+		})
+
+
+	}
+
+	async loadMaterial(src, props){
+		this.material = await ( new Promise( (resolve, reject) => {
+			const loader = new MaterialLoader();
+			loader.load(
+				src,
+				material => resolve(material),
+				xhr => {},
+				err => reject(err)
+			);
+		}));
+		props && Object.assign(this.material, props);
+	}
+
+	// Should override this method for specific types of models
+	async loadGeometry(){
+		// const src = this.props.geometry;
+		// this.geometry = await ( new Promise( (resolve, reject) => {
+		// 	const loader = new MaterialLoader();
+		// 	loader.load(
+		// 		src,
+		// 		material => resolve(material),
+		// 		xhr => {},
+		// 		err => reject(err)
+		// 	);
+		// }));
+	}
+
 	render(){
 		if(this.element){
-			const render_context = {
-				...this.context,
-				scene: this.element
-			};
+			// Creating new context should allow us to nest the objects in the scene
+			const render_context = { ...this.context, scene: this.element };
 			return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
 				OrbitsSceneProvider,
 				{ value: render_context }, 
-				...[
-					this.state.__hover  || false,
-					this.props.children || false,
-				]
+				this.state.__hover  || false,  // Adding hover components as children
+				this.props.children || false,  // Adding actual children
+				// ...[]
 			);
+		}
+		else if(this.props.children){
+			// Even without element, component still may have nested children to render
+			return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {}, this.props.children);
 		}
 		else return null;
 	}
 
+	// Mounting element
 	mountElement(){
 		this.element = this.createElement();
 		const el = this.element;
 		if(!el) return;
 
-		if(this.props.id) el.name = this.props.id;
+		if(this.props.id) {
+			el.name = this.props.id;
+		}
 
 		const scene = this.props.overlay ? this.context.overlay : this.context.scene;
 		// TODO - handle position, rotation, lookAt
 		scene.add(el);
 	}
+	// Unmount element
+	unmountElement(){
+		const el = this.element;
+		if(!el) return;
+		const scene = this.props.overlay ? this.context.overlay : this.context.scene;
+		scene.remove(el);
+	}
 
 	hasInteractions(props=this.props){
-		return interactionPropsNames.some( name => props.hasOwnProperty(name) );
+		return _utils__WEBPACK_IMPORTED_MODULE_3__["interactionPropsNames"].some( name => props.hasOwnProperty(name) );
 	}
 
 	mountInteraction(props=this.props){
+
+		if(!this.hasInteractions()) return;
 		const el = this.element;
 		if(!el || this.interactionCollider) return;
 		const scene = this.context.main;
@@ -898,6 +822,7 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 		// this.interactionCollider.material.side = DoubleSide;	     // disabled due to using the element itself!
 		this.context.defer(() => {
 			this.bindInteractions();
+			this.props.debug && console.log(this.constructor.name, "ADD COLLIDER TO INTERACTION MANAGER");
 			this.context.interaction.add(this.interactionCollider);
 		});
 		// setTimeout(() => {
@@ -907,28 +832,29 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 	bindInteractions(){
 		const object = this.interactionCollider;
+		if(!object) return;
 		const binds = object.userData.binds;
 
-		object.addEventListener("mouseover", ( binds.onMouseOver = globalHandlers.onMouseOver.bind(this)) );
-		object.addEventListener("mouseout",  ( binds.onMouseOut  = globalHandlers.onMouseOut.bind(this)) );
+		object.addEventListener("mouseover", ( binds.onMouseOver = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onMouseOver.bind(this)) );
+		object.addEventListener("mouseout",  ( binds.onMouseOut  = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onMouseOut.bind(this)) );
 
-		binds.onMouseDown = globalHandlers.onMouseDown.bind(this);
-		binds.onMouseUp = globalHandlers.onMouseUp.bind(this);
-		binds.onMouseMove = globalHandlers.onMouseMove.bind(this);
+		binds.onMouseDown = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onMouseDown.bind(this);
+		binds.onMouseUp = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onMouseUp.bind(this);
+		binds.onMouseMove = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onMouseMove.bind(this);
 
-		binds.onClick = globalHandlers.onClick.bind(this);
+		binds.onClick = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].onClick.bind(this);
 
-		binds.enableMouseDown = globalHandlers.enableMouseDown.bind(this);
-		binds.disableMouseDown = globalHandlers.disableMouseDown.bind(this);
+		binds.enableMouseDown = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].enableMouseDown.bind(this);
+		binds.disableMouseDown = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].disableMouseDown.bind(this);
 
-		binds.enableMouseMove = globalHandlers.enableMouseMove.bind(this);
-		binds.disableMouseMove = globalHandlers.disableMouseMove.bind(this);
+		binds.enableMouseMove = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].enableMouseMove.bind(this);
+		binds.disableMouseMove = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].disableMouseMove.bind(this);
 		
-		binds.enableMouseUp = globalHandlers.enableMouseUp.bind(this);
-		binds.disableMouseUp = globalHandlers.disableMouseUp.bind(this);
+		binds.enableMouseUp = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].enableMouseUp.bind(this);
+		binds.disableMouseUp = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].disableMouseUp.bind(this);
 
-		binds.enableClick = globalHandlers.enableClick.bind(this);
-		binds.disableClick = globalHandlers.disableClick.bind(this);
+		binds.enableClick = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].enableClick.bind(this);
+		binds.disableClick = _utils__WEBPACK_IMPORTED_MODULE_3__["interactionHandlers"].disableClick.bind(this);
 	}
 
 	unmountInteraction(){
@@ -944,25 +870,33 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 		this.interactionCollider.userData.props = props;
 	}
 
-	unmountElement(){
-		const el = this.element;
-		if(!el) return;
-		const scene = this.props.overlay ? this.context.overlay : this.context.scene;
-		scene.remove(el);
+
+
+	defaultMaterial(){
+		const color = parseInt(((this.props.material || {}).color || "#aaaaaa").replace("#", "0x"), 16);
+		return new MeshPhongMaterial({color});
 	}
 
-	UNSAFE_componentWillMount(){
-		this.mountElement();
-		if(this.hasInteractions()) {
-			this.mountInteraction();
-		}
-		this.UNSAFE_componentWillReceiveProps(this.props)
-	}
+
+
+	// async loadElement(){
+	// 	( typeof this.props.material === "string" ) && await this.loadMaterial();
+	// 	( typeof this.props.geometry === "string" ) && await this.loadGeometry();
+	// }
+
+	// UNSAFE_componentWillMount(){
+	// 	this.loadElement().then( () => {
+	// 		this.mountElement();
+	// 		this.mountInteraction();
+	// 		this.UNSAFE_componentWillReceiveProps(this.props);
+	// 	});
+	// }
 
 	componentWillUnmount(){
 		this.unmountElement();
-	  	this.unmountInteraction();
-	  	for(let {cancel} of this.timer_hooks) cancel();
+		this.unmountInteraction();
+		for(let {cancel} of this.timer_hooks) cancel();
+		this.context.controls.enabled = true;
 	}
 
 	UNSAFE_componentWillReceiveProps(nextProps){
@@ -973,13 +907,45 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 			? { x: nextProps.scale, y: nextProps.scale, z: nextProps.scale }
 			: nextProps.scale
 		);
-		this.handleColor(nextProps.color);
 		this.handleTransition(nextProps.transition);
 		this.handlePeriod(nextProps.period);
+		nextProps.hasOwnProperty("freezeControls") && this.handleFreezeControls(nextProps.freezeControls);
+		this.handleMaterial(nextProps.material);
+
 	}
 
 	createElement(props)     { console.warn("No element to render, please, override SceneObject.createElement method") }
-	createInteraction(props) { console.warn("No interaction collider to render, please, override SceneObject.createInteraction method (using BoxHelper as default)") }
+	createInteraction(props) {
+		// console.warn("No interaction collider to render, please, override SceneObject.createInteraction method (using BoxHelper as default)")
+	}
+
+
+	createTransitionFunction(from, to){
+
+		const base = {
+			position:      from.position && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(0, from.position),
+			rotation:      from.rotation && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(0, from.rotation),
+			scale:         from.scale    && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(1, from.scale),
+			material:      from.material && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["extractMaterialTransitionValues"])(from.material || {}),
+		};
+
+		const diff = {
+			position: from.position && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecDiff"])(base.position, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(0, to.position)),
+			rotation: from.rotation && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecDiff"])(base.rotation, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(0, to.rotation)),
+			scale:    from.scale    && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecDiff"])(base.scale,    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["fillDefaultXYZ"])(1, to.scale)),
+			material: from.material && Object(_utils__WEBPACK_IMPORTED_MODULE_3__["materialDiff"])(base.material, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["extractMaterialTransitionValues"])(to.material)),
+		}
+
+		return path => {
+			return {
+				...(base.position ?  { position: Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecAdd"])(base.position, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["multiplyScalar"])(diff.position, path)) } : {} ),
+				...(base.rotation ?  { rotation: Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecAdd"])(base.rotation, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["multiplyScalar"])(diff.rotation, path)) } : {} ),
+				...(base.scale    ?  { scale:    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["vecAdd"])(base.scale,    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["multiplyScalar"])(diff.scale, path)) }    : {} ),
+				...(base.material ?  { material: Object(_utils__WEBPACK_IMPORTED_MODULE_3__["materialStep"])(base.material, diff.material, path)} : {})
+
+			};
+		}
+	}
 
 
 
@@ -996,6 +962,12 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 
 	// Position, rotation, scale
+	handleMaterial(material){
+		if(this.material && typeof material === "object"){
+			Object.assign(this.material, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["convertMaterialProps"])(material));
+			this.material.needsUpdate = true;
+		}
+	}
 
 	handlePosition({ x = 0, y = 0, z = 0 } = {}){
 		if(this.element){
@@ -1025,9 +997,9 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 		}
 	}
 
-	handleColor(color="#888888"){
-		if(this.material){
-			this.material.color.setHex( parseInt(color.replace("#", "0x"), 16) );
+	handleOpacity(opacity){
+		if(typeof opacity === "number" && this.material){
+			this.material.opacity = opacity;
 		}
 	}
 
@@ -1035,17 +1007,16 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 		if(!this.element || !transition) return; // No element or no transition defined, aborting...
 		if(this.__transition) return;            // We have ongoing transition, aborting...
 		let { duration, timing_function, from, to } = transition;
-
 		switch(typeof timing_function){
 			case "undefined": {
-				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a.LINEAR;
+				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a.LINEAR;
 				break;
 			}
 			case "string": {
-				if(typeof _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a[transition.timing_function] !== "function"){
+				if(typeof _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a[transition.timing_function] !== "function"){
 					throw new Error("Can't find timing function " + transition.timing_function);
 				}
-				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a[transition.timing_function]
+				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a[transition.timing_function]
 				break;
 			}
 			case "function": break;
@@ -1053,94 +1024,53 @@ class Object3Component extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 			default: throw new Error("Unsupported value for timing function: " + transition.timing_function);
 		}
 
+		const transition_function = this.__transition = this.createTransitionFunction(from, to);
 
-
-		const base = {
-			position: default0(from.position),
-			rotation: default0(from.rotation),
-			scale:    default1(from.scale),
-			color:    from.color ? deconstructColor(from.color) : false,
-		}
-
-		const diff = {
-			position: vecDiff(base.position, default0(to.position)),
-			rotation: vecDiff(base.rotation, default0(to.rotation)),
-			scale:    vecDiff(base.scale,    default1(to.scale)),
-			color:    from.color ? colorDiff(base.color, deconstructColor(to.color)) : false,
-		}
-
-		this.transition({
-			duration,
-			timing_function,
-		}, (t, path) => {
-			const result = {
-				position: vecAdd(base.position, multiplyScalar(diff.position, path)),
-				rotation: vecAdd(base.rotation, multiplyScalar(diff.rotation, path)),
-				scale:    vecAdd(base.scale,    multiplyScalar(diff.scale,    path)),
-				color:    from.color ? colorAdd(base.color, multiplyColor(diff.color, path)) : false
-			};
-			this.handlePosition(result.position);
-			this.handleRotation(result.rotation);
-			this.handleScale(result.scale);
-			result.color && this.handleColor(stringifyColor(result.color));
+		this.transition({ duration, timing_function }, (t, path) => {
+			const { material, position, rotation, scale } = transition_function(path);
+			material && this.handleMaterial(material);
+			position && this.handlePosition(position);
+			rotation && this.handleRotation(rotation);
+			scale    && this.handleScale(scale);
+			if(path === 1) delete this.__transition;
 		});
-		this.__transition = true;
 	}
 
 	handlePeriod(period_settings){
 		if(!this.element || !period_settings) return; // No element or no transition defined, aborting...
-		if(this.__period) return;            // We have ongoing transition, aborting...
+		if(this.__transition) return;            // We have ongoing transition, aborting...
 		let { period, from, to, timing_function } = period_settings;
-
 
 		switch(typeof timing_function){
 			case "undefined": {
-				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a.LINEAR;
+				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a.LINEAR;
 				break;
 			}
 			case "string": {
-				if(typeof _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a[period_settings.timing_function] !== "function"){
+				if(typeof _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a[period_settings.timing_function] !== "function"){
 					throw new Error("Can't find timing function " + period_settings.timing_function);
 				}
-				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_2___default.a[period_settings.timing_function]
+				timing_function = _orbits_timer__WEBPACK_IMPORTED_MODULE_1___default.a[period_settings.timing_function];
 				break;
 			}
 			case "function": break;
 
-			default: throw new Error("Unsupported value for timing function: " + period_settings.timing_function);
+			default: throw new Error("Unsupported value for timing function: " + transition.timing_function);
 		}
-
-
-
-
-		const base = {
-			position: default0(from.position),
-			rotation: default0(from.rotation),
-			scale:    default1(from.scale),
-			color:    from.color ? deconstructColor(from.color) : false,
-		}
-
-		const diff = {
-			position: vecDiff(base.position, default0(to.position)),
-			rotation: vecDiff(base.rotation, default0(to.rotation)),
-			scale:    vecDiff(base.scale,    default1(to.scale)),
-			color:    from.color ? colorDiff(base.color, deconstructColor(to.color)) : false,
-		}
-
-		this.period(period, (t, path) => {
-			const value = timing_function(path);
-			const result = {
-				position: vecAdd(base.position, multiplyScalar(diff.position, value)),
-				rotation: vecAdd(base.rotation, multiplyScalar(diff.rotation, value)),
-				scale:    vecAdd(base.scale,    multiplyScalar(diff.scale,    value)),
-				color:    from.color ? colorAdd(base.color, multiplyColor(diff.color, path)) : false
-			};
-			this.handlePosition(result.position);
-			this.handleRotation(result.rotation);
-			this.handleScale(result.scale);
-			result.color && this.handleColor(stringifyColor(result.color));
+		const transition_function = this.__transition = this.createTransitionFunction(from, to);
+		this.period( period, (t, p) => {
+			const path = timing_function(p);
+			const { material, position, rotation, scale } = transition_function(path);
+			material && this.handleMaterial(material);
+			position && this.handlePosition(position);
+			rotation && this.handleRotation(rotation);
+			scale    && this.handleScale(scale);
+			if(path === 1) delete this.__transition;
 		});
-		this.__period = true;
+	}
+
+	handleFreezeControls(freezeControls){
+		this.context.controls.enabled = !freezeControls;
 	}
 
 }
@@ -1179,6 +1109,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+three__WEBPACK_IMPORTED_MODULE_1__["Cache"].enabled = true
+
 const { WebGLRenderer, Scene, PerspectiveCamera } = three__WEBPACK_IMPORTED_MODULE_1__;
 camera_controls__WEBPACK_IMPORTED_MODULE_2__["default"].install({THREE: three__WEBPACK_IMPORTED_MODULE_1__});
 
@@ -1206,10 +1138,15 @@ const rendererDefaults = {
     alpha:           true,
     autoclear:       false,
     clearColor:      0x000000,
-    clearColorAlpha: 0.5
+    clearColorAlpha: 0.5,
+
+    shadowMap: {
+      enabled: true,
+      type: three__WEBPACK_IMPORTED_MODULE_1__["PCFSoftShadowMap"]
+    }
 };
 
-const controlsDefaults = {
+const cameraControlsDefaults = {
     enabled: true,
 
     // distance: 100,
@@ -1293,20 +1230,37 @@ class OrbitsScene extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         this.orbitsContext._defers.push(fn);
       }
     };
+    window.orbitsContext = this.orbitsContext;
   }
 
   setCanvas(canvas){
     if(this.orbitsContext.canvas) return;
+
+    const defaultCursor = this.props.defaultCursor || "auto";
+
+    canvas.style.cursor=defaultCursor
+
+    this.orbitsContext.setCursor = ( cursor ) => {
+      cursor = cursor || defaultCursor;
+      canvas.style.cursor = cursor.match(/[\/.]/)
+        ? `url('${cursor || defaultCursor}'), auto`
+        : cursor;
+    }
+
+    this.orbitsContext.setCursor(defaultCursor);
+
     
-    this.orbitsContext.canvas        = canvas;
-    this.orbitsContext.scene         = this.createScene(this.props);
-    this.orbitsContext.overlay       = this.createOverlay(this.props);
-    this.orbitsContext.timer         = this.createTimer(this.props);
-    this.orbitsContext.camera        = this.createCamera(this.props);
-    this.orbitsContext.audioListener = this.createaudioListener(this.props);
-    this.orbitsContext.renderer      = this.createRenderer(this.props);
-    this.orbitsContext.controls      = this.createControls(this.props);
-    this.orbitsContext.interaction   = this.createInteraction(this.props);
+    this.orbitsContext.canvas         = canvas;
+    this.orbitsContext.scene          = this.createScene(this.props);
+    this.orbitsContext.overlay        = this.createOverlay(this.props);
+    this.orbitsContext.timer          = this.createTimer(this.props);
+    this.orbitsContext.camera         = this.createCamera(this.props);
+    this.orbitsContext.audioListener  = this.createaudioListener(this.props);
+    this.orbitsContext.fontsCache     = this.createFontsCache(this.props);
+    this.orbitsContext.materialsCache = this.createMaterialsCache(this.props);
+    this.orbitsContext.renderer       = this.createRenderer(this.props);
+    this.orbitsContext.controls       = this.createControls(this.props);
+    this.orbitsContext.interaction    = this.createInteraction(this.props);
 
     let width, height, debounce;
     window.addEventListener("resize", this.initOnResizeListener = e => {
@@ -1342,7 +1296,14 @@ class OrbitsScene extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   createScene(props){
-    return new Scene();
+    const scene = new Scene();
+    this.props.position && Object.assign(scene.position, this.props.position);
+    this.props.rotation && Object.assign(scene.rotation, this.props.rotation);
+    this.props.scale    && 
+      typeof this.props.scale === "number"
+        ? Object.assign(scene.scale, {x: this.props.scale, y: this.props.scale, z: this.props.scale })
+        : Object.assign(scene.scale, this.props.scale)
+    return scene;
   }
 
   createOverlay(props){
@@ -1370,6 +1331,14 @@ class OrbitsScene extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return camera;
   }
 
+  createMaterialsCache(){
+    return new Map();
+  }
+
+  createFontsCache(props){
+    return new Map();
+  }
+
   createaudioListener(){
     const listener = new three__WEBPACK_IMPORTED_MODULE_1__["AudioListener"]();
     this.orbitsContext.camera.add(listener);
@@ -1379,7 +1348,7 @@ class OrbitsScene extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   createRenderer(props){
     const { canvas } = this.orbitsContext;
-    const options = props.rendererOptions || rendererDefaults;
+    const { shadowMap, ...options } = props.rendererOptions || rendererDefaults;
     const renderer = new WebGLRenderer({
       canvas,
       alpha: options.alpha,
@@ -1387,19 +1356,39 @@ class OrbitsScene extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     renderer.setSize( options.width, options.height );
     renderer.autoClear = options.autoclear;
     renderer.setClearColor(options.clearColor, options.clearColorAlpha);
+    if(shadowMap){
+      Object.assign(renderer.shadowMap, shadowMap);
+      renderer.shadowMap.needsUpdate = true;
+    }
     return renderer;
   }
 
   createControls(props){
     const { camera, canvas, timer } = this.orbitsContext;
     const controls = new camera_controls__WEBPACK_IMPORTED_MODULE_2__["default"]( camera, canvas );
-    Object.assign(controls, defaults((this.props.controlsOptions || {}), controlsDefaults));
+    Object.assign(controls, defaults((this.props.cameraControls || {}), cameraControlsDefaults));
     this._binds.onControlsUpdateListener = e => {
       this.props.onUpdateControls && this.props.onUpdateControls(e);
     }
     controls.addEventListener( "update", this._binds.onControlsUpdateListener);
+    this.orbitsContext.setCameraControls = this.setCameraControlsOptions.bind(this);
+
     controls.update();
     return controls;
+  }
+
+  setCameraControlsOptions(opts){
+      const combined = defaults(
+        opts || {},
+        defaults(this.props.cameraControls, cameraControlsDefaults)
+      );
+      const {zoom, target, ...rest} = combined;
+      Object.assign(this.orbitsContext.controls, rest);
+      (typeof zoom === "number") && this.orbitsContext.controls.zoomTo(zoom);
+      Array.isArray(target) && this.orbitsContext.controls.setTarget(...target);
+      // setTimeout(() => {
+      //   this.orbitsContext.controls.update();
+      // }, 0);
   }
 
   createInteraction(props){
@@ -1702,6 +1691,43 @@ class AudioEffectComponent extends _Object3Component__WEBPACK_IMPORTED_MODULE_1_
 
 /***/ }),
 
+/***/ "../hq/orbits-engine/lib/components/CameraControls.js":
+/*!************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/CameraControls.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CameraControlsScope; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+class CameraControlsScope extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
+	hasInteractions(){ return false; }
+	createElement(){ 
+		return null;
+	}
+
+	UNSAFE_componentWillReceiveProps({onUpdateControls, ...nextProps}){
+		this.context.setCameraControls(nextProps);
+		onUpdateControls && this.context.controls.addEventListener( "update", this._onUpdateControls = onUpdateControls);
+	}
+
+	componentWillUnmount(){
+		this._onUpdateControls && this.context.controls.removeEventListener( "update", this._onUpdateControls);
+		this.context.setCameraControls(null);
+	}
+}
+
+/***/ }),
+
 /***/ "../hq/orbits-engine/lib/components/DirectionalLight.js":
 /*!**************************************************************!*\
   !*** ../hq/orbits-engine/lib/components/DirectionalLight.js ***!
@@ -1794,16 +1820,44 @@ class OrbitsFog extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"
 		scene.background = color || null;
 	}
 
-	handleNear(near = 1){
-		this.element.near = near;
-	}
-	handleFar(far = 10000){
-		this.element.far = far;
-	}
+	handleNear (near = 1    ) { this.element.near = near; }
+	handleFar  (far  = 10000) { this.element.far  = far;  }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (OrbitsFog);
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/Group.js":
+/*!***************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/Group.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OrbitsGroup; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+class OrbitsGroup extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
+	hasInteractions(){ return false; }
+	handleColor(){  }
+	createElement(){ 
+		setTimeout(() => {
+			this.setState({___init: Math.random()})
+		}, 0);
+		return new three__WEBPACK_IMPORTED_MODULE_2__["Group"]();
+
+	}
+}
 
 /***/ }),
 
@@ -1869,7 +1923,6 @@ class ObjLoader extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"
 
 
       ]).then( ([element, textures, normalMaps]) => {
-        console.log("LOADED: ", { element, textures, normalMaps });
         cb(null, { element, textures, normalMaps });
       })
       .catch(cb)
@@ -1881,7 +1934,6 @@ class ObjLoader extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"
 
     mountElement(){
       this.createElement( (err, { element, textures, normalMaps } = {}) => {
-
 
         if(err) return this.props.onError && this.props.onError(err);
 
@@ -1912,14 +1964,13 @@ class ObjLoader extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"
           }
         }
 
-
         scene.add(element);
         this.UNSAFE_componentWillReceiveProps(this.props);
       }, progress => this.props.onProgress && this.props.onProgress(progress));
     }
 
-    handleColor(color="#888888"){
-      if(this.element && this.props.applyColor && color){
+    handleColor(color){
+      if(this.element && this.props.applyColor && (typeof color === "string")){
         this.element.traverse( child => {
           if(child instanceof three__WEBPACK_IMPORTED_MODULE_2__["Mesh"] && child.name === this.props.applyColor){
             child.material.color.setHex( parseInt(color.replace("#", "0x"), 16) );
@@ -1955,12 +2006,20 @@ __webpack_require__.r(__webpack_exports__);
 class OrbitsPointLightComponent extends _abstract_AbstractLightComponent__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 	createElement(){
-		return new three__WEBPACK_IMPORTED_MODULE_2__["PointLight"](
+		const element =  new three__WEBPACK_IMPORTED_MODULE_2__["PointLight"](
 			this.props.color ?  parseInt(this.props.color.replace("#", "0x"), 16) : 0xffffff,
 			this.props.intensity || 1,
 			this.props.distance  || 10000,
 			2
 		);
+
+		if(this.props.debug){
+			const helper = new three__WEBPACK_IMPORTED_MODULE_2__["CameraHelper"]( element.shadow.camera );
+			element.add( helper );			
+		}
+
+
+		return element;
 	}
 
 }
@@ -2137,6 +2196,28 @@ class AbstractLightComponent extends _Object3Component__WEBPACK_IMPORTED_MODULE_
 	}
 
 
+}
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/abstract/LoadableComponent.js":
+/*!************************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/abstract/LoadableComponent.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoadableComponent; });
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+
+
+class LoadableComponent extends _Object3Component__WEBPACK_IMPORTED_MODULE_0__["default"] {
+	render(){
+		if(this.state.__isLoaded) return super.render();
+		return null;
+	}
 }
 
 /***/ }),
@@ -2893,29 +2974,17 @@ __webpack_require__.r(__webpack_exports__);
 class Box extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
     createElement(){
-      // this.material = new MeshBasicMaterial({ color: this.props.color });
-
-
-      this.material = new three__WEBPACK_IMPORTED_MODULE_2__["MeshPhongMaterial"]({
-        color: this.props.color,
-        // emissive: "#111111",
-        reflectivity: 0.002,
-        // map: (new TextureLoader()).load( texture ),
-      });
-
-
-
-
+      this.material = this.material || this.defaultMaterial();
       const size_args = this.props.size 
         ? typeof this.props.size === "number"
           ? [this.props.size, this.props.size, this.props.size]
           : this.props.size
         : [1, 1, 1]
       this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__["BoxGeometry"]( ...size_args );
+      this.geometry.computeFaceNormals();
       const mesh = new three__WEBPACK_IMPORTED_MODULE_2__["Mesh"]( this.geometry, this.material );
       return mesh;
     }
-
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Box);
@@ -3299,6 +3368,70 @@ class Lathe extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 /***/ }),
 
+/***/ "../hq/orbits-engine/lib/components/geometries/Line.js":
+/*!*************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/geometries/Line.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+const Prototypes = {
+  LineBasicMaterial: three__WEBPACK_IMPORTED_MODULE_2__["LineBasicMaterial"],
+  LineDashedMaterial: three__WEBPACK_IMPORTED_MODULE_2__["LineDashedMaterial"],
+}
+
+class OrbitsLine extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
+
+    defaultMaterial(){
+      const color = parseInt(((this.props.material || {}).color || "#aaaaaa").replace("#", "0x"), 16);
+      return new three__WEBPACK_IMPORTED_MODULE_2__["LineBasicMaterial"]({color});
+    }
+
+    createElement(){
+      const {points} = this.props;
+      const vertices = points.map( p => new three__WEBPACK_IMPORTED_MODULE_2__["Vector3"](...p) );
+      this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__["BufferGeometry"]().setFromPoints( vertices );
+      this.handlePoints(points);
+      const element =  new three__WEBPACK_IMPORTED_MODULE_2__["Line"]( this.geometry, this.material );
+      element.computeLineDistances();
+      return element;
+    }
+
+    UNSAFE_componentWillReceiveProps(nextProps){
+      super.UNSAFE_componentWillReceiveProps(nextProps);
+      nextProps.points && this.handlePoints(nextProps.points);
+    }
+
+    handlePoints(points){
+      const buffer = new Float32Array(points.length * 3);
+      const verts = points.reduce( (a, p) => a.concat(p), []);
+      verts.forEach( (n, i) => { buffer[i] = n });
+      this.geometry.attributes.position.array = buffer;
+      this.geometry.attributes.position.itemSize = points.length;
+      this.geometry.setDrawRange( 0, points.length );
+      this.geometry.attributes.position.needsUpdate = true;
+      this.geometry.computeBoundingBox();
+      this.geometry.computeBoundingSphere();
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (OrbitsLine);
+
+
+/***/ }),
+
 /***/ "../hq/orbits-engine/lib/components/geometries/Octahedron.js":
 /*!*******************************************************************!*\
   !*** ../hq/orbits-engine/lib/components/geometries/Octahedron.js ***!
@@ -3386,6 +3519,100 @@ class Plane extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Plane);
+
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/geometries/Point.js":
+/*!**************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/geometries/Point.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+class OrbitsPoint extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
+
+    defaultMaterial(){
+      return new three__WEBPACK_IMPORTED_MODULE_2__["PointsMaterial"]({color});
+    }
+
+    createElement(){
+      this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__["BufferGeometry"]();
+      this.geometry.setFromPoints([new three__WEBPACK_IMPORTED_MODULE_2__["Vector3"]( 0, 0, 0)]);
+      const element =  new three__WEBPACK_IMPORTED_MODULE_2__["Points"]( this.geometry, this.material );
+      console.log({element});
+      return element;
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (OrbitsPoint);
+
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/geometries/Points.js":
+/*!***************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/geometries/Points.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Object3Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Object3Component */ "../hq/orbits-engine/lib/Object3Component.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+class OrbitsPoints extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
+
+    defaultMaterial(){
+      return new three__WEBPACK_IMPORTED_MODULE_2__["PointsMaterial"]();
+    }
+
+    createElement(){
+      this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__["BufferGeometry"]();
+      this.geometry.setFromPoints(this.props.points.map( c => new three__WEBPACK_IMPORTED_MODULE_2__["Vector3"](...c)));
+      const element = new three__WEBPACK_IMPORTED_MODULE_2__["Points"]( this.geometry, this.material );
+      return element;
+    }
+
+    UNSAFE_componentWillReceiveProps(nextProps){
+      super.UNSAFE_componentWillReceiveProps(nextProps);
+      nextProps.points && this.handlePoints(nextProps.points);
+    }
+
+    handlePoints(points){
+      const buffer = new Float32Array(points.length * 3);
+      const verts = points.reduce( (a, p) => a.concat(p), []);
+      verts.forEach( (n, i) => { buffer[i] = n });
+      this.geometry.attributes.position.array = buffer;
+      this.geometry.attributes.position.itemSize = points.length;
+      this.geometry.setDrawRange( 0, points.length );
+      this.geometry.attributes.position.needsUpdate = true;
+      this.geometry.computeBoundingBox();
+      this.geometry.computeBoundingSphere();
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (OrbitsPoints);
 
 
 /***/ }),
@@ -3569,16 +3796,6 @@ __webpack_require__.r(__webpack_exports__);
 class Sphere extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
     createElement(){
-      // this.material = new MeshBasicMaterial({ color: this.props.color });
-
-
-      this.material = new three__WEBPACK_IMPORTED_MODULE_2__["MeshPhongMaterial"]({
-        color: this.props.color,
-        // emissive: "#111111",
-        reflectivity: 0.002,
-        // map: (new TextureLoader()).load( texture ),
-      });
-
 
       const {
         radius, widthSegments, heightSegments,
@@ -3598,6 +3815,39 @@ class Sphere extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 /* harmony default export */ __webpack_exports__["default"] = (Sphere);
 
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/geometries/Sprite.js":
+/*!***************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/geometries/Sprite.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _abstract_LoadableComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../abstract/LoadableComponent */ "../hq/orbits-engine/lib/components/abstract/LoadableComponent.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+
+class OrbitsSprite extends _abstract_LoadableComponent__WEBPACK_IMPORTED_MODULE_1__["default"] {
+
+  createElement(){
+    return new three__WEBPACK_IMPORTED_MODULE_2__["Sprite"](
+      this.material,
+    );
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (OrbitsSprite);
 
 /***/ }),
 
@@ -3643,6 +3893,97 @@ class Tetrahedron extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["defaul
 
 /* harmony default export */ __webpack_exports__["default"] = (Tetrahedron);
 
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/components/geometries/Text.js":
+/*!*************************************************************!*\
+  !*** ../hq/orbits-engine/lib/components/geometries/Text.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _abstract_LoadableComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../abstract/LoadableComponent */ "../hq/orbits-engine/lib/components/abstract/LoadableComponent.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+
+class Text extends _abstract_LoadableComponent__WEBPACK_IMPORTED_MODULE_1__["default"] {
+
+  createElement(){
+    const font = this.__font;
+
+    const {
+      text,
+      size,
+      
+      height,
+      curveSegments,
+      bevelEnabled,
+      bevelThickness,
+      bevelSize,
+      bevelOffset,
+      bevelSegments,
+    } = this.props;
+
+
+    this.geometry = new three__WEBPACK_IMPORTED_MODULE_2__["TextGeometry"]( text, {
+      font,
+      size,
+      height,
+      curveSegments,
+      bevelEnabled,
+      bevelThickness,
+      bevelSize,
+      bevelOffset,
+      bevelSegments,
+    });
+
+    return new three__WEBPACK_IMPORTED_MODULE_2__["Mesh"](
+      this.geometry,
+      this.material || this.defaultMaterial(),
+    );
+  }
+
+  async loadElement(){
+
+    await super.loadElement();
+
+    const cache = this.context.fontsCache;
+    const src = this.props.font;
+
+    const done = (font) => {
+      this.mountElement();
+      this.mountInteraction();
+      this.UNSAFE_componentWillReceiveProps(this.props);
+      this.setState({__isLoaded: true});
+    }
+
+    if(cache.has(src)) {
+      this.__font = cache.get(src);
+      return done();
+    }
+
+    const loader = new three__WEBPACK_IMPORTED_MODULE_2__["FontLoader"]();
+
+    loader.load( src, ( font ) => {
+      cache.set(src, font);
+      this.__font = font;
+      done();
+    })
+
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Text);
 
 /***/ }),
 
@@ -3818,6 +4159,347 @@ class Tube extends _Object3Component__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 /* harmony default export */ __webpack_exports__["default"] = (Tube);
 
+
+/***/ }),
+
+/***/ "../hq/orbits-engine/lib/utils.js":
+/*!****************************************!*\
+  !*** ../hq/orbits-engine/lib/utils.js ***!
+  \****************************************/
+/*! exports provided: materialStep, extractMaterialTransitionValues, materialDiff, convertMaterialProps, fillDefaultXYZ, vecAdd, vecDiff, multiplyScalar, colorDiff, deconstructColor, colorAdd, multiplyColor, stringifyColor, interactionHandlers, interactionPropsNames */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "materialStep", function() { return materialStep; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractMaterialTransitionValues", function() { return extractMaterialTransitionValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "materialDiff", function() { return materialDiff; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertMaterialProps", function() { return convertMaterialProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fillDefaultXYZ", function() { return fillDefaultXYZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vecAdd", function() { return vecAdd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vecDiff", function() { return vecDiff; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiplyScalar", function() { return multiplyScalar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colorDiff", function() { return colorDiff; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deconstructColor", function() { return deconstructColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colorAdd", function() { return colorAdd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiplyColor", function() { return multiplyColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringifyColor", function() { return stringifyColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionHandlers", function() { return interactionHandlers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionPropsNames", function() { return interactionPropsNames; });
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+const stripUndefined = obj => {
+	for(let key in obj){
+		if(typeof obj[key] === "undefined"){
+			delete obj[key];
+		}
+	}
+	return obj;
+}
+
+const materialStep = (base, diff, path) => {
+	const result = { colors: {}, values:{} };
+	for(let propName in base.colors){
+		result.colors[propName] = stringifyColor({
+			r: Math.round(base.colors[propName].r + (diff.colors[propName].r * path)),
+			g: Math.round(base.colors[propName].g + (diff.colors[propName].g * path)),
+			b: Math.round(base.colors[propName].b + (diff.colors[propName].b * path)),
+		});
+	}
+	for(let propName in base.values) result.values[propName] = base.values[propName] + (diff.values[propName] * path);
+	return result;
+}
+
+const extractMaterialTransitionValues = ({ values = {}, colors = {} }) => {
+	const result = { values: {}, colors: {} };
+	for(let propName in values) if(typeof values[propName] === "number") result.values[propName] = values[propName];
+	for(let propName in colors)  result.colors[propName] = deconstructColor(colors[propName]);
+	return result;
+}
+
+const materialDiff = (base, dest) => {
+	const result = { colors: {}, values:{} };
+	for(let propName in base.colors){
+		result.colors[propName] = {
+			r: dest.colors[propName].r - base.colors[propName].r,
+			g: dest.colors[propName].g - base.colors[propName].g,
+			b: dest.colors[propName].b - base.colors[propName].b,
+		}
+	}
+	for(let propName in base.values){
+		result.values[propName] = dest.values[propName] - base.values[propName];
+	}
+	return result;
+}
+
+const convertMaterialProps = ({
+	type, src,       // Just omit them 
+	
+	colors = {},
+
+	vectors2 = {},
+
+	vectors3 = {},
+
+	values = {},
+
+	constants = {},
+	...props
+}, textures = {}) => {
+	let convertedVectors2 = {};
+	if(vectors2){
+		for(let propName in vectors2){
+			convertedVectors2[propName] = new three__WEBPACK_IMPORTED_MODULE_0__["Vector2"](...vectors2[propName]);
+		}
+	}
+
+	let convertedVectors3 = {};
+	if(vectors3){
+		for(let propName in vectors3){
+			convertedVectors3[propName] = new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](...vectors3[propName]);
+		}
+	}
+
+	let convertedColors = {};
+	if(colors){
+		for(let propName in colors){
+			convertedColors[propName] = new three__WEBPACK_IMPORTED_MODULE_0__["Color"](parseInt(colors[propName].replace("#", "0x"), 16));
+		}
+	}
+
+	let convertedConstants = {};
+	if(constants){
+		for(let propName in constants){
+			convertedConstants[propName] = three__WEBPACK_IMPORTED_MODULE_0__[constants[propName]];
+		}
+	}
+
+	const finish = {};
+	// finish.needsUpdate = true;
+	values.uniforms && (finish.uniformsNeedUpdate = true);
+
+	Object.assign(
+		props,
+		textures,
+		convertedConstants,
+		convertedColors,
+		convertedVectors2,
+		values,
+		finish,
+	);
+
+	return props;
+}
+
+
+
+
+/*
+	Vectors utils
+*/
+
+const fillDefaultXYZ = ( value, { x = value, y = value, z = value } = {}) => ({ x, y, z });
+
+const vecAdd = (vec1, vec2)  => ({ x: vec1.x + vec2.x, y: vec1.y + vec2.y, z: vec1.z + vec2.z  });
+const vecDiff = (base, target) => {
+	return {
+		x: target.x - base.x,
+		y: target.y - base.y,
+		z: target.z - base.z,
+	};
+};
+
+const multiplyScalar = (vec, scalar) => ({ x: vec.x * scalar,  y: vec.y * scalar,  z: vec.z * scalar   });
+
+
+
+/*
+	Color utils
+*/
+
+const colorDiff = (col1, col2) => {
+	return { r: col2.r - col1.r, g: col2.g - col1.g, b: col2.b - col1.b, };
+}
+
+const deconstructColor = (color) => {
+	return {
+		r: parseInt("0x" + color[1] + color[2], 16),
+		g: parseInt("0x" + color[3] + color[4], 16),
+		b: parseInt("0x" + color[5] + color[6], 16),
+	}
+}
+
+const colorAdd = (c1, c2) => ({ r: c1.r + c2.r, g: c1.g + c2.g, b: c1.b + c2.b });
+const multiplyColor = ({r,g,b}, n) => ({r : Math.round(r*n), g: Math.round(g*n), b: Math.round(b*n)});
+const stringifyColor = ({r, g, b}) => {
+	return "#" + [
+		(r < 0x10 ? "0" : "" ) + r.toString(16),
+		(g < 0x10 ? "0" : "" ) + g.toString(16),
+		(b < 0x10 ? "0" : "" ) + b.toString(16),
+	].join("");
+}
+
+
+
+
+
+/*
+	Mouse interaction utils
+*/
+
+
+
+const interactionHandlers = {
+	
+	// Always bound events
+	onMouseOver: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
+		// First enable all to get ahead of handlers exceptions
+		e.target.userData.binds.enableMouseMove();
+		e.target.userData.binds.enableMouseDown();
+		e.target.userData.binds.enableMouseUp();
+		e.target.userData.binds.enableClick();
+
+		this.props.hover && this.setState({__hover: this.props.hover});
+
+		this.context.setCursor(props.cursor);
+
+		props.onMouseOver && props.onMouseOver(e);
+		props.onMouseMove && props.onMouseMove(e);
+		
+	},
+
+	onMouseOut: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
+		// First disable all to get ahead of handlers exceptions
+		e.target.userData.binds.disableMouseMove();
+		e.target.userData.binds.disableMouseUp();
+		e.target.userData.binds.disableMouseDown();
+		e.target.userData.binds.disableClick();
+
+		this.setState({__hover: null});
+		this.context.setCursor(null);
+
+		props.onMouseOut && props.onMouseOut(e);
+	},
+
+	// Primary handlers (will be enabled after mouse enter and disabled after mouseout)
+	onMouseDown: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
+		e.stopPropagation();
+		markers.downButton = e.originalEvent.button;
+		props.onMouseDown && props.onMouseDown(e);
+		markers.awaitHold = setTimeout(() => {
+			markers.awaitHold = 0;
+			props.onHold && props.onHold(e);
+			// Alter markers.downButton to prevent trigger click after mouseup
+			markers.downButton = -1;
+		}, 1000 );
+	},
+
+	onMouseUp: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
+		e.stopPropagation();
+		markers.upButton = e.originalEvent.button;
+		props.onMouseUp && props.onMouseUp(e);
+		markers.enableClick && e.target.userData.binds.onClick(e);
+		markers.awaitHold && clearTimeout(markers.awaitHold)
+	},
+
+	onMouseMove: function(e, props=this.props, markers=this.interactionCollider.userData.markers){
+		props.onMouseMove && props.onMouseMove(e);
+	},
+
+	// Artific
+	onClick: function(e, props=this.props, markers=this.interactionCollider.userData.markers, binds=this.interactionCollider.userData.binds){
+
+		if((markers.downButton !== markers.upButton)){
+			markers.lastClick = 0;
+			return;
+		}
+
+		switch(markers.upButton){
+			case 0: {
+				// Handle Double Click
+				if(markers.lastClick && Date.now() - markers.lastClick < 150){
+					props.onDoubleClick && props.onDoubleClick(e);
+					markers.lastClick = 0;
+				}
+				// Handle single click
+				else{
+					markers.lastClick = Date.now();
+					props.onClick && props.onClick(e);
+				}
+				break;
+			}
+
+			case 1: {
+					markers.lastClick = 0;
+					props.onMiddleClick && props.onMiddleClick(e);
+					break;
+			}
+			case 2: {
+					markers.lastClick = 0;
+					props.onContext && props.onContext(e);
+					break;
+			}
+		}
+	},
+
+	// Helper Function 
+	enableMouseMove: function(){
+		this.interactionCollider.addEventListener("mousemove", this.interactionCollider.userData.binds.onMouseMove);
+	},
+	
+	disableMouseMove: function(){
+		this.interactionCollider.removeEventListener("mousemove", this.interactionCollider.userData.binds.onMouseMove);
+	},
+
+	enableMouseDown: function(){
+		this.interactionCollider.addEventListener("mousedown", this.interactionCollider.userData.binds.onMouseDown);
+	},
+	
+	disableMouseDown: function(){
+		this.interactionCollider.removeEventListener("mousedown", this.interactionCollider.userData.binds.onMouseDown);
+	},
+
+	enableMouseUp: function(){
+		this.interactionCollider.addEventListener("mouseup", this.interactionCollider.userData.binds.onMouseUp);
+	},
+	
+	disableMouseUp: function(){
+		this.interactionCollider.removeEventListener("mouseup", this.interactionCollider.userData.binds.onMouseUp);
+		const markers = this.interactionCollider.userData.markers
+		markers.awaitHold && clearTimeout(markers.awaitHold)
+		markers.awaitHold = 0;
+	},
+
+	enableClick: function(markers=this.interactionCollider.userData.markers){
+		markers.enableClick=true;
+		markers.lastClick = 0;
+	},
+
+	disableClick: function(markers=this.interactionCollider.userData.markers){
+		markers.enableClick=false;
+	},
+};
+
+const interactionPropsNames = [
+	"hover",
+	"cursor",
+	"onClick",
+	"onDoubleClick",
+	"onMiddleClick",
+	"onContext",
+	"onHold",
+	"onMouseDown",
+	"onMouseUp",
+	"onMouseOver",
+	"onMouseOut",
+	"onMouseMove",
+	"onTouchStart",
+	"onTouchCancel",
+	"onTouchMove",
+	"onTouchEnd",
+	"interactive",
+];
 
 /***/ }),
 
@@ -5827,7 +6509,73 @@ __webpack_require__.r(__webpack_exports__);
   }, " Mouse Events   "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/hover"
-  }, "        Hover          "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Transforms:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "        Hover          "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CameraControls:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/camera-controls"
+  }, "        Controls scope       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Cursor:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/cursor"
+  }, "                Cursor               "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Fog:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/fog"
+  }, " Fog  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Audio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/audio"
+  }, " Audio  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Materials:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/points-material"
+  }, "        PointsMaterial       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/line-basic-material"
+  }, "    LineBasicMaterial    ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/line-dashed-material"
+  }, "   LineDashedMaterial   ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-basic-material"
+  }, "    MeshBasicMaterial    ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-depth-material"
+  }, "    MeshDepthMaterial    ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-distance-material"
+  }, " MeshDistanceMaterial ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-lambert-material"
+  }, "  MeshLambertMaterial  ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-matcap-material"
+  }, "   MeshMatcapMaterial   ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-normal-material"
+  }, "   MeshNormalMaterial   ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-phong-material"
+  }, "    MeshPhongMaterial    ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-physical-material"
+  }, " MeshPhysicalMaterial ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-standart-material"
+  }, " MeshStandardMaterial ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/mesh-toon-material"
+  }, "     MeshToonMaterial     ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/points-material"
+  }, "        PointsMaterial       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/raw-shader-material"
+  }, "    RawShaderMaterial    ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/shader-material"
+  }, "        ShaderMaterial       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/shadow-material"
+  }, "        ShadowMaterial       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/sprite-material"
+  }, "        SpriteMaterial       ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Transforms:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/position"
   }, "     Position       "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -5860,16 +6608,19 @@ __webpack_require__.r(__webpack_exports__);
   }, " Spot Light  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/directional-light"
-  }, " Directional Light  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Fog:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nowrap",
-    to: "/fog"
-  }, " Fog  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Audio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nowrap",
-    to: "/audio"
-  }, " Audio  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Loaders:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, " Directional Light  "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Loaders:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/obj-loader"
   }, " OBJ Loader "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Geometries:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/point-geometry"
+  }, "        PointGeometry        "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/points-geometry"
+  }, "       PointsGeometry       "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/line-geometry"
+  }, "         LineGeometry         "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/box-geometry"
   }, "          BoxGeometry          "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -5923,7 +6674,13 @@ __webpack_require__.r(__webpack_exports__);
   }, "    TorusKnotGeometry    "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nowrap",
     to: "/tube-geometry"
-  }, "         TubeGeometry         "), " ")));
+  }, "         TubeGeometry         "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/text-geometry"
+  }, "         TextGeometry         "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nowrap",
+    to: "/sprite"
+  }, "                SpriteGeometry       "), " ")));
 });
 
 /***/ }),
@@ -5941,40 +6698,88 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _scenes_Basics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scenes/Basics */ "./example/scenes/Basics.jsx");
-/* harmony import */ var _scenes_MouseEvents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scenes/MouseEvents */ "./example/scenes/MouseEvents.jsx");
-/* harmony import */ var _scenes_Hover__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scenes/Hover */ "./example/scenes/Hover.jsx");
-/* harmony import */ var _scenes_Position__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scenes/Position */ "./example/scenes/Position.jsx");
-/* harmony import */ var _scenes_Rotation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scenes/Rotation */ "./example/scenes/Rotation.jsx");
-/* harmony import */ var _scenes_Scale__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scenes/Scale */ "./example/scenes/Scale.jsx");
-/* harmony import */ var _scenes_ScaleNumber__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./scenes/ScaleNumber */ "./example/scenes/ScaleNumber.jsx");
-/* harmony import */ var _scenes_Color__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./scenes/Color */ "./example/scenes/Color.jsx");
-/* harmony import */ var _scenes_Transition__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./scenes/Transition */ "./example/scenes/Transition.jsx");
-/* harmony import */ var _scenes_Period__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./scenes/Period */ "./example/scenes/Period.jsx");
-/* harmony import */ var _scenes_AmbientLight__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./scenes/AmbientLight */ "./example/scenes/AmbientLight.jsx");
-/* harmony import */ var _scenes_PointLight__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./scenes/PointLight */ "./example/scenes/PointLight.jsx");
-/* harmony import */ var _scenes_SpotLight__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./scenes/SpotLight */ "./example/scenes/SpotLight.jsx");
-/* harmony import */ var _scenes_DirectionalLight__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./scenes/DirectionalLight */ "./example/scenes/DirectionalLight.jsx");
-/* harmony import */ var _scenes_Fog__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scenes/Fog */ "./example/scenes/Fog.jsx");
-/* harmony import */ var _scenes_ObjLoader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./scenes/ObjLoader */ "./example/scenes/ObjLoader.jsx");
-/* harmony import */ var _scenes_geometries_BoxGeometry__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./scenes/geometries/BoxGeometry */ "./example/scenes/geometries/BoxGeometry.jsx");
-/* harmony import */ var _scenes_geometries_CircleGeometry__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./scenes/geometries/CircleGeometry */ "./example/scenes/geometries/CircleGeometry.jsx");
-/* harmony import */ var _scenes_geometries_ConeGeometry__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scenes/geometries/ConeGeometry */ "./example/scenes/geometries/ConeGeometry.jsx");
-/* harmony import */ var _scenes_geometries_CylinderGeometry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scenes/geometries/CylinderGeometry */ "./example/scenes/geometries/CylinderGeometry.jsx");
-/* harmony import */ var _scenes_geometries_DodecahedronGeometry__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./scenes/geometries/DodecahedronGeometry */ "./example/scenes/geometries/DodecahedronGeometry.jsx");
-/* harmony import */ var _scenes_geometries_ExtrudeGeometry__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./scenes/geometries/ExtrudeGeometry */ "./example/scenes/geometries/ExtrudeGeometry.jsx");
-/* harmony import */ var _scenes_geometries_IcosahedronGeometry__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./scenes/geometries/IcosahedronGeometry */ "./example/scenes/geometries/IcosahedronGeometry.jsx");
-/* harmony import */ var _scenes_geometries_LatheGeometry__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./scenes/geometries/LatheGeometry */ "./example/scenes/geometries/LatheGeometry.jsx");
-/* harmony import */ var _scenes_geometries_OctahedronGeometry__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./scenes/geometries/OctahedronGeometry */ "./example/scenes/geometries/OctahedronGeometry.jsx");
-/* harmony import */ var _scenes_geometries_PlaneGeometry__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./scenes/geometries/PlaneGeometry */ "./example/scenes/geometries/PlaneGeometry.jsx");
-/* harmony import */ var _scenes_geometries_PolyhedronGeometry__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./scenes/geometries/PolyhedronGeometry */ "./example/scenes/geometries/PolyhedronGeometry.jsx");
-/* harmony import */ var _scenes_geometries_RingGeometry__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./scenes/geometries/RingGeometry */ "./example/scenes/geometries/RingGeometry.jsx");
-/* harmony import */ var _scenes_geometries_ShapeGeometry__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./scenes/geometries/ShapeGeometry */ "./example/scenes/geometries/ShapeGeometry.jsx");
-/* harmony import */ var _scenes_geometries_SphereGeometry__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./scenes/geometries/SphereGeometry */ "./example/scenes/geometries/SphereGeometry.jsx");
-/* harmony import */ var _scenes_geometries_TetrahedronGeometry__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./scenes/geometries/TetrahedronGeometry */ "./example/scenes/geometries/TetrahedronGeometry.jsx");
-/* harmony import */ var _scenes_geometries_TorusGeometry__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./scenes/geometries/TorusGeometry */ "./example/scenes/geometries/TorusGeometry.jsx");
-/* harmony import */ var _scenes_geometries_TorusKnotGeometry__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./scenes/geometries/TorusKnotGeometry */ "./example/scenes/geometries/TorusKnotGeometry.jsx");
-/* harmony import */ var _scenes_geometries_TubeGeometry__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./scenes/geometries/TubeGeometry */ "./example/scenes/geometries/TubeGeometry.jsx");
-/* harmony import */ var _scenes_Audio__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./scenes/Audio */ "./example/scenes/Audio.jsx");
+/* harmony import */ var _scenes_materials_LineBasicMaterial_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scenes/materials/LineBasicMaterial.jsx */ "./example/scenes/materials/LineBasicMaterial.jsx");
+/* harmony import */ var _scenes_materials_LineDashedMaterial_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scenes/materials/LineDashedMaterial.jsx */ "./example/scenes/materials/LineDashedMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshBasicMaterial_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scenes/materials/MeshBasicMaterial.jsx */ "./example/scenes/materials/MeshBasicMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshDepthMaterial_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scenes/materials/MeshDepthMaterial.jsx */ "./example/scenes/materials/MeshDepthMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshDistanceMaterial_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scenes/materials/MeshDistanceMaterial.jsx */ "./example/scenes/materials/MeshDistanceMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshLambertMaterial_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./scenes/materials/MeshLambertMaterial.jsx */ "./example/scenes/materials/MeshLambertMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshMatcapMaterial_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./scenes/materials/MeshMatcapMaterial.jsx */ "./example/scenes/materials/MeshMatcapMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshNormalMaterial_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./scenes/materials/MeshNormalMaterial.jsx */ "./example/scenes/materials/MeshNormalMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshPhongMaterial_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./scenes/materials/MeshPhongMaterial.jsx */ "./example/scenes/materials/MeshPhongMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshPhysicalMaterial_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./scenes/materials/MeshPhysicalMaterial.jsx */ "./example/scenes/materials/MeshPhysicalMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshStandardMaterial_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./scenes/materials/MeshStandardMaterial.jsx */ "./example/scenes/materials/MeshStandardMaterial.jsx");
+/* harmony import */ var _scenes_materials_MeshToonMaterial_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./scenes/materials/MeshToonMaterial.jsx */ "./example/scenes/materials/MeshToonMaterial.jsx");
+/* harmony import */ var _scenes_materials_PointsMaterial_jsx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./scenes/materials/PointsMaterial.jsx */ "./example/scenes/materials/PointsMaterial.jsx");
+/* harmony import */ var _scenes_materials_RawShaderMaterial_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scenes/materials/RawShaderMaterial.jsx */ "./example/scenes/materials/RawShaderMaterial.jsx");
+/* harmony import */ var _scenes_materials_ShaderMaterial_jsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./scenes/materials/ShaderMaterial.jsx */ "./example/scenes/materials/ShaderMaterial.jsx");
+/* harmony import */ var _scenes_materials_ShadowMaterial_jsx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./scenes/materials/ShadowMaterial.jsx */ "./example/scenes/materials/ShadowMaterial.jsx");
+/* harmony import */ var _scenes_materials_SpriteMaterial_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./scenes/materials/SpriteMaterial.jsx */ "./example/scenes/materials/SpriteMaterial.jsx");
+/* harmony import */ var _scenes_MouseEvents__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scenes/MouseEvents */ "./example/scenes/MouseEvents.jsx");
+/* harmony import */ var _scenes_Hover__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scenes/Hover */ "./example/scenes/Hover.jsx");
+/* harmony import */ var _scenes_Position__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./scenes/Position */ "./example/scenes/Position.jsx");
+/* harmony import */ var _scenes_Rotation__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./scenes/Rotation */ "./example/scenes/Rotation.jsx");
+/* harmony import */ var _scenes_Scale__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./scenes/Scale */ "./example/scenes/Scale.jsx");
+/* harmony import */ var _scenes_ScaleNumber__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./scenes/ScaleNumber */ "./example/scenes/ScaleNumber.jsx");
+/* harmony import */ var _scenes_Color__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./scenes/Color */ "./example/scenes/Color.jsx");
+/* harmony import */ var _scenes_Transition__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./scenes/Transition */ "./example/scenes/Transition.jsx");
+/* harmony import */ var _scenes_Period__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./scenes/Period */ "./example/scenes/Period.jsx");
+/* harmony import */ var _scenes_AmbientLight__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./scenes/AmbientLight */ "./example/scenes/AmbientLight.jsx");
+/* harmony import */ var _scenes_PointLight__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./scenes/PointLight */ "./example/scenes/PointLight.jsx");
+/* harmony import */ var _scenes_SpotLight__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./scenes/SpotLight */ "./example/scenes/SpotLight.jsx");
+/* harmony import */ var _scenes_DirectionalLight__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./scenes/DirectionalLight */ "./example/scenes/DirectionalLight.jsx");
+/* harmony import */ var _scenes_Fog__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./scenes/Fog */ "./example/scenes/Fog.jsx");
+/* harmony import */ var _scenes_ObjLoader__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./scenes/ObjLoader */ "./example/scenes/ObjLoader.jsx");
+/* harmony import */ var _scenes_geometries_PointGeometry__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./scenes/geometries/PointGeometry */ "./example/scenes/geometries/PointGeometry.jsx");
+/* harmony import */ var _scenes_geometries_PointsGeometry__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./scenes/geometries/PointsGeometry */ "./example/scenes/geometries/PointsGeometry.jsx");
+/* harmony import */ var _scenes_geometries_LineGeometry__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./scenes/geometries/LineGeometry */ "./example/scenes/geometries/LineGeometry.jsx");
+/* harmony import */ var _scenes_geometries_BoxGeometry__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./scenes/geometries/BoxGeometry */ "./example/scenes/geometries/BoxGeometry.jsx");
+/* harmony import */ var _scenes_geometries_CircleGeometry__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./scenes/geometries/CircleGeometry */ "./example/scenes/geometries/CircleGeometry.jsx");
+/* harmony import */ var _scenes_geometries_ConeGeometry__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./scenes/geometries/ConeGeometry */ "./example/scenes/geometries/ConeGeometry.jsx");
+/* harmony import */ var _scenes_geometries_CylinderGeometry__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./scenes/geometries/CylinderGeometry */ "./example/scenes/geometries/CylinderGeometry.jsx");
+/* harmony import */ var _scenes_geometries_DodecahedronGeometry__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./scenes/geometries/DodecahedronGeometry */ "./example/scenes/geometries/DodecahedronGeometry.jsx");
+/* harmony import */ var _scenes_geometries_ExtrudeGeometry__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./scenes/geometries/ExtrudeGeometry */ "./example/scenes/geometries/ExtrudeGeometry.jsx");
+/* harmony import */ var _scenes_geometries_IcosahedronGeometry__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./scenes/geometries/IcosahedronGeometry */ "./example/scenes/geometries/IcosahedronGeometry.jsx");
+/* harmony import */ var _scenes_geometries_LatheGeometry__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./scenes/geometries/LatheGeometry */ "./example/scenes/geometries/LatheGeometry.jsx");
+/* harmony import */ var _scenes_geometries_OctahedronGeometry__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./scenes/geometries/OctahedronGeometry */ "./example/scenes/geometries/OctahedronGeometry.jsx");
+/* harmony import */ var _scenes_geometries_PlaneGeometry__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./scenes/geometries/PlaneGeometry */ "./example/scenes/geometries/PlaneGeometry.jsx");
+/* harmony import */ var _scenes_geometries_PolyhedronGeometry__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./scenes/geometries/PolyhedronGeometry */ "./example/scenes/geometries/PolyhedronGeometry.jsx");
+/* harmony import */ var _scenes_geometries_RingGeometry__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./scenes/geometries/RingGeometry */ "./example/scenes/geometries/RingGeometry.jsx");
+/* harmony import */ var _scenes_geometries_ShapeGeometry__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./scenes/geometries/ShapeGeometry */ "./example/scenes/geometries/ShapeGeometry.jsx");
+/* harmony import */ var _scenes_geometries_SphereGeometry__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./scenes/geometries/SphereGeometry */ "./example/scenes/geometries/SphereGeometry.jsx");
+/* harmony import */ var _scenes_geometries_TetrahedronGeometry__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./scenes/geometries/TetrahedronGeometry */ "./example/scenes/geometries/TetrahedronGeometry.jsx");
+/* harmony import */ var _scenes_geometries_TorusGeometry__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./scenes/geometries/TorusGeometry */ "./example/scenes/geometries/TorusGeometry.jsx");
+/* harmony import */ var _scenes_geometries_TorusKnotGeometry__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./scenes/geometries/TorusKnotGeometry */ "./example/scenes/geometries/TorusKnotGeometry.jsx");
+/* harmony import */ var _scenes_geometries_TubeGeometry__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./scenes/geometries/TubeGeometry */ "./example/scenes/geometries/TubeGeometry.jsx");
+/* harmony import */ var _scenes_geometries_TextGeometry__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./scenes/geometries/TextGeometry */ "./example/scenes/geometries/TextGeometry.jsx");
+/* harmony import */ var _scenes_geometries_SpriteGeometry__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./scenes/geometries/SpriteGeometry */ "./example/scenes/geometries/SpriteGeometry.jsx");
+/* harmony import */ var _scenes_Audio__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./scenes/Audio */ "./example/scenes/Audio.jsx");
+/* harmony import */ var _scenes_Cursor__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./scenes/Cursor */ "./example/scenes/Cursor.jsx");
+/* harmony import */ var _scenes_CameraControls__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./scenes/CameraControls */ "./example/scenes/CameraControls.jsx");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6017,74 +6822,122 @@ __webpack_require__.r(__webpack_exports__);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/basics"
   }, "       ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Basics__WEBPACK_IMPORTED_MODULE_2__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/line-basic-material"
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_LineBasicMaterial_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/line-dashed-material"
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_LineDashedMaterial_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-basic-material"
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshBasicMaterial_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-depth-material"
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshDepthMaterial_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-distance-material"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshDistanceMaterial_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-lambert-material"
+  }, "  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshLambertMaterial_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], null), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-matcap-material"
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshMatcapMaterial_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-normal-material"
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshNormalMaterial_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-phong-material"
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshPhongMaterial_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-physical-material"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshPhysicalMaterial_jsx__WEBPACK_IMPORTED_MODULE_12__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-standart-material"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshStandardMaterial_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/mesh-toon-material"
+  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_MeshToonMaterial_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], null), "     "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/points-material"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_PointsMaterial_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/raw-shader-material"
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_RawShaderMaterial_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/shader-material"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_ShaderMaterial_jsx__WEBPACK_IMPORTED_MODULE_17__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/shadow-material"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_ShadowMaterial_jsx__WEBPACK_IMPORTED_MODULE_18__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/sprite-material"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_materials_SpriteMaterial_jsx__WEBPACK_IMPORTED_MODULE_19__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/camera-controls"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_CameraControls__WEBPACK_IMPORTED_MODULE_60__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/mouse-events"
-  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_MouseEvents__WEBPACK_IMPORTED_MODULE_3__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_MouseEvents__WEBPACK_IMPORTED_MODULE_20__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/hover"
-  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Hover__WEBPACK_IMPORTED_MODULE_4__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Hover__WEBPACK_IMPORTED_MODULE_21__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/position"
-  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Position__WEBPACK_IMPORTED_MODULE_5__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Position__WEBPACK_IMPORTED_MODULE_22__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/rotation"
-  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Rotation__WEBPACK_IMPORTED_MODULE_6__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Rotation__WEBPACK_IMPORTED_MODULE_23__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/scale"
-  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Scale__WEBPACK_IMPORTED_MODULE_7__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Scale__WEBPACK_IMPORTED_MODULE_24__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/scale_number"
-  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_ScaleNumber__WEBPACK_IMPORTED_MODULE_8__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_ScaleNumber__WEBPACK_IMPORTED_MODULE_25__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/color"
-  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Color__WEBPACK_IMPORTED_MODULE_9__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Color__WEBPACK_IMPORTED_MODULE_26__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/transition"
-  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Transition__WEBPACK_IMPORTED_MODULE_10__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Transition__WEBPACK_IMPORTED_MODULE_27__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/period"
-  }, "       ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Period__WEBPACK_IMPORTED_MODULE_11__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "       ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Period__WEBPACK_IMPORTED_MODULE_28__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/ambient-light"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_AmbientLight__WEBPACK_IMPORTED_MODULE_12__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_AmbientLight__WEBPACK_IMPORTED_MODULE_29__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/point-light"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_PointLight__WEBPACK_IMPORTED_MODULE_13__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_PointLight__WEBPACK_IMPORTED_MODULE_30__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/spot-light"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_SpotLight__WEBPACK_IMPORTED_MODULE_14__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_SpotLight__WEBPACK_IMPORTED_MODULE_31__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/directional-light"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_DirectionalLight__WEBPACK_IMPORTED_MODULE_15__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_DirectionalLight__WEBPACK_IMPORTED_MODULE_32__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/fog"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Fog__WEBPACK_IMPORTED_MODULE_16__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Fog__WEBPACK_IMPORTED_MODULE_33__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/audio"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Audio__WEBPACK_IMPORTED_MODULE_36__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Audio__WEBPACK_IMPORTED_MODULE_58__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/obj-loader"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_ObjLoader__WEBPACK_IMPORTED_MODULE_17__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_ObjLoader__WEBPACK_IMPORTED_MODULE_34__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/point-geometry"
+  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PointGeometry__WEBPACK_IMPORTED_MODULE_35__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/points-geometry"
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PointsGeometry__WEBPACK_IMPORTED_MODULE_36__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/line-geometry"
+  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_LineGeometry__WEBPACK_IMPORTED_MODULE_37__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/box-geometry"
-  }, "           ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_BoxGeometry__WEBPACK_IMPORTED_MODULE_18__["default"], null), "          "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "           ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_BoxGeometry__WEBPACK_IMPORTED_MODULE_38__["default"], null), "          "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/circle-geometry"
-  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_CircleGeometry__WEBPACK_IMPORTED_MODULE_19__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_CircleGeometry__WEBPACK_IMPORTED_MODULE_39__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cone-geometry"
-  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ConeGeometry__WEBPACK_IMPORTED_MODULE_20__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ConeGeometry__WEBPACK_IMPORTED_MODULE_40__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cylinder-geometry"
-  }, "      ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_CylinderGeometry__WEBPACK_IMPORTED_MODULE_21__["default"], null), "     "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "      ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_CylinderGeometry__WEBPACK_IMPORTED_MODULE_41__["default"], null), "     "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/dodecahedron-geometry"
-  }, "  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_DodecahedronGeometry__WEBPACK_IMPORTED_MODULE_22__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_DodecahedronGeometry__WEBPACK_IMPORTED_MODULE_42__["default"], null), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/extrude-geometry"
-  }, "       ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ExtrudeGeometry__WEBPACK_IMPORTED_MODULE_23__["default"], null), "      "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "       ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ExtrudeGeometry__WEBPACK_IMPORTED_MODULE_43__["default"], null), "      "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/icosahedron-geometry"
-  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_IcosahedronGeometry__WEBPACK_IMPORTED_MODULE_24__["default"], null), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_IcosahedronGeometry__WEBPACK_IMPORTED_MODULE_44__["default"], null), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/lathe-geometry"
-  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_LatheGeometry__WEBPACK_IMPORTED_MODULE_25__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_LatheGeometry__WEBPACK_IMPORTED_MODULE_45__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/octahedron-geometry"
-  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_OctahedronGeometry__WEBPACK_IMPORTED_MODULE_26__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_OctahedronGeometry__WEBPACK_IMPORTED_MODULE_46__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/plane-geometry"
-  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PlaneGeometry__WEBPACK_IMPORTED_MODULE_27__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PlaneGeometry__WEBPACK_IMPORTED_MODULE_47__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/polyhedron-geometry"
-  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PolyhedronGeometry__WEBPACK_IMPORTED_MODULE_28__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_PolyhedronGeometry__WEBPACK_IMPORTED_MODULE_48__["default"], null), "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/ring-geometry"
-  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_RingGeometry__WEBPACK_IMPORTED_MODULE_29__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_RingGeometry__WEBPACK_IMPORTED_MODULE_49__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/shape-geometry"
-  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ShapeGeometry__WEBPACK_IMPORTED_MODULE_30__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_ShapeGeometry__WEBPACK_IMPORTED_MODULE_50__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/sphere-geometry"
-  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_SphereGeometry__WEBPACK_IMPORTED_MODULE_31__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "        ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_SphereGeometry__WEBPACK_IMPORTED_MODULE_51__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/tetrahedron-geometry"
-  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TetrahedronGeometry__WEBPACK_IMPORTED_MODULE_32__["default"], null), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "   ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TetrahedronGeometry__WEBPACK_IMPORTED_MODULE_52__["default"], null), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/torus-geometry"
-  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TorusGeometry__WEBPACK_IMPORTED_MODULE_33__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "         ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TorusGeometry__WEBPACK_IMPORTED_MODULE_53__["default"], null), "        "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/torusknot-geometry"
-  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TorusKnotGeometry__WEBPACK_IMPORTED_MODULE_34__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, "     ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TorusKnotGeometry__WEBPACK_IMPORTED_MODULE_54__["default"], null), "    "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/tube-geometry"
-  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TubeGeometry__WEBPACK_IMPORTED_MODULE_35__["default"], null), "         ")));
+  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TubeGeometry__WEBPACK_IMPORTED_MODULE_55__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/text-geometry"
+  }, "          ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_TextGeometry__WEBPACK_IMPORTED_MODULE_56__["default"], null), "         "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/sprite"
+  }, "                 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_geometries_SpriteGeometry__WEBPACK_IMPORTED_MODULE_57__["default"], null), "       "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/cursor"
+  }, "                 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_scenes_Cursor__WEBPACK_IMPORTED_MODULE_59__["default"], null), "               ")));
 });
 
 /***/ }),
@@ -6102,18 +6955,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
 /* harmony import */ var _SkyBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SkyBox */ "./example/SkyBox.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["OrbitsScene"], {
+    defaultCursor: "/images/cursor.png",
     renderInterval: 10 // optional, default: 40 (ms)
     // onUpdateControls={ e => console.log("onUpdateControls", e.target.distance) }
     ,
-    controlsOptions: {
-      distance: 150
-    }
+    cameraControls: {
+      distance: 150,
+      polarAngle: Math.PI / 2,
+      azimuthAngle: 0,
+      zoom: 0
+    },
+    rendererOptions: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      alpha: true,
+      autoclear: false,
+      clearColor: 0x000000,
+      clearColorAlpha: 0.5,
+      antialias: true,
+      shadowMap: {
+        enabled: true,
+        type: three__WEBPACK_IMPORTED_MODULE_3__["PCFSoftShadowMap"]
+      }
+    } // TODO - fix issue
+    // rendererOptions={{
+    // 	antialias: true,
+    // }}
+
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SkyBox__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["AmbientLight"], {
     color: "ffffff",
     intensity: 0.5
@@ -6270,7 +7146,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     intensity: lightIntensity
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -6358,8 +7239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    size: [50, 25, 25],
-    color: "#999999"
+    size: [50, 25, 12.5]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -6367,6 +7247,297 @@ __webpack_require__.r(__webpack_exports__);
   }, " Scene Source "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/Basics.jsx"
   }, " Object Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/CameraControls.jsx":
+/*!*******************************************!*\
+  !*** ./example/scenes/CameraControls.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  // TODO
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(Date.now()),
+      _useState2 = _slicedToArray(_useState, 2),
+      targetDebounce = _useState2[0],
+      setTargetDebounce = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([0, 0, 0]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      target = _useState4[0],
+      setTarget = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      enabled = _useState6[0],
+      setenabled = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      boundaryEnclosesCamera = _useState8[0],
+      setboundaryEnclosesCamera = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      verticalDragToForward = _useState10[0],
+      setverticalDragToForward = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState12 = _slicedToArray(_useState11, 2),
+      dollyToCursor = _useState12[0],
+      setdollyToCursor = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100),
+      _useState14 = _slicedToArray(_useState13, 2),
+      distance = _useState14[0],
+      setdistance = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(4000),
+      _useState16 = _slicedToArray(_useState15, 2),
+      maxDistance = _useState16[0],
+      setmaxDistance = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(20),
+      _useState18 = _slicedToArray(_useState17, 2),
+      minDistance = _useState18[0],
+      setminDistance = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(Math.PI / 2),
+      _useState20 = _slicedToArray(_useState19, 2),
+      polarAngle = _useState20[0],
+      setPolarAngle = _useState20[1];
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(Math.PI),
+      _useState22 = _slicedToArray(_useState21, 2),
+      maxPolarAngle = _useState22[0],
+      setmaxPolarAngle = _useState22[1];
+
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(Math.PI / 2),
+      _useState24 = _slicedToArray(_useState23, 2),
+      minPolarAngle = _useState24[0],
+      setminPolarAngle = _useState24[1];
+
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState26 = _slicedToArray(_useState25, 2),
+      azimuthAngle = _useState26[0],
+      setAzimuthAngle = _useState26[1];
+
+  var _useState27 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-100),
+      _useState28 = _slicedToArray(_useState27, 2),
+      minAzimuthAngle = _useState28[0],
+      setminAzimuthAngle = _useState28[1];
+
+  var _useState29 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100),
+      _useState30 = _slicedToArray(_useState29, 2),
+      maxAzimuthAngle = _useState30[0],
+      setmaxAzimuthAngle = _useState30[1];
+
+  var _useState31 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState32 = _slicedToArray(_useState31, 2),
+      zoom = _useState32[0],
+      setZoom = _useState32[1];
+
+  var _useState33 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState34 = _slicedToArray(_useState33, 2),
+      minZoom = _useState34[0],
+      setMinZoom = _useState34[1];
+
+  var _useState35 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(10),
+      _useState36 = _slicedToArray(_useState35, 2),
+      maxZoom = _useState36[0],
+      setMaxZoom = _useState36[1];
+
+  var _useState37 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState38 = _slicedToArray(_useState37, 2),
+      boundaryFriction = _useState38[0],
+      setboundaryFriction = _useState38[1];
+
+  var _useState39 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(20),
+      _useState40 = _slicedToArray(_useState39, 2),
+      dampingFactor = _useState40[0],
+      setdampingFactor = _useState40[1];
+
+  var _useState41 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(10),
+      _useState42 = _slicedToArray(_useState41, 2),
+      draggingDampingFactor = _useState42[0],
+      setdraggingDampingFactor = _useState42[1];
+
+  var _useState43 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState44 = _slicedToArray(_useState43, 2),
+      azimuthRotateSpeed = _useState44[0],
+      setazimuthRotateSpeed = _useState44[1];
+
+  var _useState45 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState46 = _slicedToArray(_useState45, 2),
+      polarRotateSpeed = _useState46[0],
+      setpolarRotateSpeed = _useState46[1];
+
+  var _useState47 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0.2),
+      _useState48 = _slicedToArray(_useState47, 2),
+      dollySpeed = _useState48[0],
+      setdollySpeed = _useState48[1];
+
+  var _useState49 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(2.0),
+      _useState50 = _slicedToArray(_useState49, 2),
+      truckSpeed = _useState50[0],
+      settruckSpeed = _useState50[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["CameraControls"] // TODO
+  , {
+    target: target,
+    distance: distance,
+    polarAngle: polarAngle,
+    azimuthAngle: azimuthAngle,
+    zoom: zoom,
+    minZoom: minZoom,
+    maxZoom: maxZoom,
+    enabled: enabled,
+    boundaryEnclosesCamera: boundaryEnclosesCamera,
+    verticalDragToForward: verticalDragToForward,
+    dollyToCursor: dollyToCursor,
+    maxDistance: maxDistance,
+    minDistance: minDistance,
+    maxPolarAngle: maxPolarAngle,
+    minPolarAngle: minPolarAngle,
+    maxAzimuthAngle: maxAzimuthAngle,
+    minAzimuthAngle: minAzimuthAngle,
+    boundaryFriction: boundaryFriction,
+    dampingFactor: dampingFactor,
+    draggingDampingFactor: draggingDampingFactor,
+    azimuthRotateSpeed: azimuthRotateSpeed,
+    polarRotateSpeed: polarRotateSpeed,
+    dollySpeed: dollySpeed,
+    truckSpeed: truckSpeed,
+    onUpdateControls: function onUpdateControls(e) {
+      setdistance(e.target.distance);
+      setPolarAngle(e.target.polarAngle);
+      setAzimuthAngle(e.target.azimuthAngle);
+      var debounceDelta = Date.now() - targetDebounce; // TODO - get back target without error
+      // if(debounceDelta > 300){
+      // 	const target = e.target.getTarget();
+      // 	const {x,y,z} = e.target.getTarget();
+      // 	if( target[0] !== x || target[1] !== y || target[2] !== z ) setTarget([x,y,z]);
+      // 	setTargetDebounce(Date.now());
+      // }
+    }
+    /*
+    	CameraControls.ACTION.ROTATE* 
+    	CameraControls.ACTION.TRUCK 
+    	CameraControls.ACTION.DOLLY 
+    	CameraControls.ACTION.ZOOM 
+    	CameraControls.ACTION.NONE
+    */
+    // TODO: stringify options:
+    // mouseButtons={{
+    // 	left:   CameraControls.ACTION.ROTATE,
+    // 	middle: CameraControls.ACTION.NONE,
+    // 	right:  CameraControls.ACTION.TRUCK,
+    // 	wheel:  CameraControls.ACTION.DOLLY
+    // }}
+    // touches={{
+    // 	one:   CameraControls.ACTION.ROTATE,
+    // 	two:   CameraControls.ACTION.DOLLY,
+    // 	three: CameraControls.ACTION.NONE,
+    // }}
+
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 25, 25],
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    position: {
+      x: 50,
+      y: 25,
+      z: 25
+    },
+    size: [50, 25, 25],
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, [["enabled", enabled, setenabled], ["boundaryEnclosesCamera", boundaryEnclosesCamera, setboundaryEnclosesCamera], ["verticalDragToForward", verticalDragToForward, setverticalDragToForward], ["dollyToCursor", dollyToCursor, setdollyToCursor]].map(function (_ref, i) {
+    var _ref2 = _slicedToArray(_ref, 3),
+        name = _ref2[0],
+        value = _ref2[1],
+        setter = _ref2[2];
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+      key: "checkbox-".concat(i)
+    }, name, ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "checkbox",
+      checked: value,
+      onChange: function onChange(e) {
+        return setter(e.target.checked);
+      }
+    }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), [// NAME                   VALUE                  SETTER                       MIN           MAX          STEP
+  // TODO
+  ["targetX", target[0], function (x) {
+    return setTimeout(setTarget([x, target[1], target[2]]), 0);
+  }, -100, 100, 1], ["targetY", target[1], function (y) {
+    return setTimeout(setTarget([target[0], y, target[2]]), 0);
+  }, -100, 100, 1], ["targetZ", target[2], function (z) {
+    return setTimeout(setTarget([target[0], target[1], z]), 0);
+  }, -100, 100, 1], ["distance", distance, setdistance, minDistance, maxDistance, 1], ["maxDistance", maxDistance, setmaxDistance, 300, 500, 10], ["minDistance", minDistance, setminDistance, 20, 50, 1], ["zoom", zoom, setZoom, minZoom, maxZoom, 0.01], ["minZoom", minZoom, setMinZoom, 1, 10, 0.01], ["maxZoom", maxZoom, setMaxZoom, 1, 10, 0.01], ["polarAngle", polarAngle, setPolarAngle, minPolarAngle, maxPolarAngle, 0.01], ["minPolarAngle", minPolarAngle, setminPolarAngle, 0, Math.PI, 0.01], ["maxPolarAngle", maxPolarAngle, setmaxPolarAngle, 0, Math.PI, 0.01], ["azimuthAngle", azimuthAngle, setAzimuthAngle, minAzimuthAngle, maxAzimuthAngle, 0.01], ["minAzimuthAngle", minAzimuthAngle, setminAzimuthAngle, -100, 100, 0.01], ["maxAzimuthAngle", maxAzimuthAngle, setmaxAzimuthAngle, -100, 100, 0.01], ["boundaryFriction", boundaryFriction, setboundaryFriction, 0, 100, 1], ["dampingFactor", dampingFactor, setdampingFactor, 0, 100, 1], ["draggingDampingFactor", draggingDampingFactor, setdraggingDampingFactor, 0, 100, 1], ["azimuthRotateSpeed", azimuthRotateSpeed, setazimuthRotateSpeed, 0.5, 5, 0.01], ["polarRotateSpeed", polarRotateSpeed, setpolarRotateSpeed, 0.5, 5, 0.01], ["dollySpeed", dollySpeed, setdollySpeed, 0.1, 5, 0.01], ["truckSpeed", truckSpeed, settruckSpeed, 0.1, 5, 0.01]].map(function (_ref3, i) {
+    var _ref4 = _slicedToArray(_ref3, 6),
+        name = _ref4[0],
+        value = _ref4[1],
+        setter = _ref4[2],
+        min = _ref4[3],
+        max = _ref4[4],
+        step = _ref4[5];
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      key: "range-".concat(i),
+      style: {
+        "float": "right",
+        clear: "right"
+      }
+    }, name, " [", value, "]:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "range",
+      value: value,
+      min: min,
+      max: max,
+      step: step,
+      onChange: function onChange(e) {
+        return setter(parseFloat(e.target.value));
+      }
+    }));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/CameraControls.jsx"
+  }, " Source ")));
 });
 
 /***/ }),
@@ -6405,7 +7576,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     color: color,
-    size: [50, 25, 25]
+    size: [50, 25, 25],
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: color
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -6419,6 +7596,53 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/Color.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/Cursor.jsx":
+/*!***********************************!*\
+  !*** ./example/scenes/Cursor.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    cursor: "/images/cursor-full.png",
+    size: [50, 25, 25],
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    position: {
+      x: 55,
+      y: 0,
+      z: 0
+    },
+    cursor: "/images/cursor-green.png",
+    size: [50, 25, 25],
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/Cursor.jsx"
   }, " Source ")));
 });
 
@@ -6506,7 +7730,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     intensity: lightIntensity
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -6643,7 +7872,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     far: fogFar
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -6697,13 +7931,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  var blue_dots_material = {
+    type: "MeshBasicMaterial",
+    colors: {
+      color: "#0000ff"
+    }
+  };
+  var red_dots_material = {
+    type: "MeshBasicMaterial",
+    colors: {
+      color: "#ff0000"
+    }
+  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    debug: false,
     size: 50,
-    color: "#777777",
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#777777"
+      }
+    },
     hover: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Object 1 HTML Hover add"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: 55,
         y: 0,
@@ -6711,7 +7961,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: 0,
         y: 55,
@@ -6719,7 +7969,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: 0,
         y: 0,
@@ -6727,7 +7977,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: -55,
         y: 0,
@@ -6735,7 +7985,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: 0,
         y: -55,
@@ -6743,7 +7993,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#ff0000",
+      material: red_dots_material,
       position: {
         x: 0,
         y: 0,
@@ -6751,7 +8001,12 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 10,
-      color: "#ff00ff",
+      material: {
+        type: "MeshBasicMaterial",
+        colors: {
+          color: "#ff00ff"
+        }
+      },
       transition: {
         duration: 200,
         timing_function: "EASE_OUT_SINE",
@@ -6782,9 +8037,13 @@ __webpack_require__.r(__webpack_exports__);
       }
     }))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    debug: false,
     size: 50,
-    color: "#777777",
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#777777"
+      }
+    },
     position: {
       x: 100,
       y: 100,
@@ -6792,16 +8051,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     hover: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Object 2 HTML Hover add"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: 55,
         y: 0,
         z: 0
-      },
-      debug: true
+      }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: 0,
         y: 55,
@@ -6809,7 +8067,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: 0,
         y: 0,
@@ -6817,7 +8075,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: -55,
         y: 0,
@@ -6825,7 +8083,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: 0,
         y: -55,
@@ -6833,7 +8091,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       size: 5,
-      color: "#0000ff",
+      material: blue_dots_material,
       position: {
         x: 0,
         y: 0,
@@ -6842,9 +8100,13 @@ __webpack_require__.r(__webpack_exports__);
     }))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     interactive: true,
-    debug: false,
     size: 50,
-    color: "aaaaaa",
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#aaaaaa"
+      }
+    },
     position: {
       x: -100,
       y: 100,
@@ -6853,7 +8115,12 @@ __webpack_require__.r(__webpack_exports__);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     debug: false,
     size: 50,
-    color: "cccccc",
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#cccccc"
+      }
+    },
     position: {
       x: -100,
       y: -100,
@@ -6942,7 +8209,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#aaaaaa",
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#aaaaaa"
+      }
+    },
     onMouseOver: function onMouseOver(e) {
       setMouseOver("*");
       setMouseOut("");
@@ -7077,11 +8349,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    material: {
+      type: "MeshBasicMaterial",
+      values: {
+        transparent: true
+      }
+    },
     period: {
-      period: 1500,
+      period: 4500,
       timing_function: "EASE_IN_SINE",
       from: {
-        color: "#0000aa",
+        material: {
+          values: {
+            opacity: 0.9
+          },
+          colors: {
+            color: "#0000aa"
+          }
+        },
         position: {
           x: 0,
           y: 0,
@@ -7099,14 +8384,21 @@ __webpack_require__.r(__webpack_exports__);
         }
       },
       to: {
-        color: "#aaaa00",
+        material: {
+          values: {
+            opacity: 0.1
+          },
+          colors: {
+            color: "#aaaa00"
+          }
+        },
         position: {
           x: 300,
           y: 300,
           z: 0
         },
         rotation: {
-          x: 10,
+          x: 30,
           y: 0,
           z: 0
         },
@@ -7117,8 +8409,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    size: [50, 25, 25],
-    color: "#999999"
+    size: [50, 25, 25]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -7196,7 +8487,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     distance: lightDistance
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7314,7 +8610,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       z: posZ
     },
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7405,7 +8706,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       z: rotZ
     },
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7496,7 +8802,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       z: scaleZ
     },
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7573,7 +8884,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     scale: scale,
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshBasicMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Scale: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7695,7 +9011,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     penumbra: lightPenumbra
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -7830,11 +9151,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    material: {
+      type: "MeshBasicMaterial",
+      values: {
+        transparent: true
+      }
+    },
     transition: {
-      duration: 1500,
+      duration: 12000,
       timing_function: "EASE_IN_SINE",
       from: {
-        color: "#00aaaa",
+        material: {
+          values: {
+            opacity: 0.2
+          },
+          colors: {
+            color: "#00aaaa"
+          }
+        },
         position: {
           x: 0,
           y: 0,
@@ -7852,7 +9186,14 @@ __webpack_require__.r(__webpack_exports__);
         }
       },
       to: {
-        color: "#aa0000",
+        material: {
+          values: {
+            opacity: 0.7
+          },
+          colors: {
+            color: "#aa0000"
+          }
+        },
         position: {
           x: 500,
           y: 500,
@@ -7898,7 +9239,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     size: [50, 25, 25],
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -7923,10 +9269,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Circle"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Circle"] // Geometry Properties:
+  , {
     radius: 30,
-    segments: 50,
-    color: "#999999"
+    segments: 50 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -7951,15 +9304,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Cone"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Cone"] // Geometry properties:
+  , {
     radius: 20,
     height: 50,
     radialSegments: 100,
     heightSegments: 1,
     openEnded: false,
     thetaStart: 0,
-    thetaLength: Math.PI * 2 * 0.95,
-    color: "#009999"
+    thetaLength: Math.PI * 2 * 0.95 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -7984,7 +9344,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Cylinder"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Cylinder"] // Geometry properties:
+  , {
     radiusTop: 20,
     radiusBottom: 30,
     height: 50,
@@ -7993,7 +9354,12 @@ __webpack_require__.r(__webpack_exports__);
     openEnded: false,
     thetaStart: 0,
     thetaLength: Math.PI * 2 * 0.95,
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8018,10 +9384,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Dodecahedron"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Dodecahedron"] // Geometry properties:
+  , {
     radius: 30,
-    detail: 0,
-    color: "#999999"
+    detail: 0 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8046,7 +9419,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Extrude"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Extrude"] // Geometry properties:
+  , {
     shape: [["move", 10, 10], ["line", 10, 0], ["line", 0, 0], ["line", 0, 20], ["bezierCurve", 10, 40, 20, 30, 10, 10]],
     path: [[1, 1, 1], [100, 100, 0], [-100, 100, -200], [100, -100, 100]],
     steps: 22,
@@ -8055,27 +9429,14 @@ __webpack_require__.r(__webpack_exports__);
     bevelThickness: 1,
     bevelSize: 2,
     bevelOffset: 2,
-    bevelSegments: 22 // TODO:
-    // extrudePath={[
-    // 	[10, 20, 0],
-    // 	[20, 10, 0],
-    // 	[10, 20, 10],
-    // 	[20, 10, 10],
-    // 	[10, 20, 20],
-    // 	[20, 10, 20],
-    // 	[10, 20, 30],
-    // 	[20, 10, 30],
-    // 	[10, 20, 40],
-    // 	[20, 10, 40],
-    // 	[10, 20, 50],
-    // 	[20, 10, 50],
-    // 	[10, 20, 60],
-    // 	[20, 10, 60],
-    // 	[10, 20, 70],
-    // 	[20, 10, 70],
-    // ]}
+    bevelSegments: 22 // Material:
     ,
-    color: "#999999"
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8100,10 +9461,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Icosahedron"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Icosahedron"] // Geometry properties:
+  , {
     radius: 30,
-    detail: 0,
-    color: "#999999"
+    detail: 0 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8134,16 +9502,146 @@ for (var i = 0; i < 100; i += 0.01) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Lathe"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Lathe"] // Geometry properties:
+  , {
     shape: waves,
     segments: 32,
     phiStart: 0,
-    phiLength: Math.PI * 2 * 0.9,
-    color: "#999999"
+    phiLength: Math.PI * 2 * 0.9 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/LatheGeometry.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/geometries/LineGeometry.jsx":
+/*!****************************************************!*\
+  !*** ./example/scenes/geometries/LineGeometry.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      posX = _useState2[0],
+      setposX = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      posY = _useState4[0],
+      setposY = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      posZ = _useState6[0],
+      setposZ = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("#ffffff"),
+      _useState8 = _slicedToArray(_useState7, 2),
+      color = _useState8[0],
+      setColor = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      linewidth = _useState10[0],
+      setLineWidth = _useState10[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Line"] // Geometry properties:
+  , {
+    points: [[50, 25, 25], [posX, posY, posZ], [-50, 25, 25]] // Material:
+    ,
+    material: {
+      type: "LineBasicMaterial",
+      colors: {
+        color: color
+      },
+      values: {
+        linewidth: linewidth
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posX,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setposX(parseInt(value));
+    }
+  }), "Y: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posY,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setposY(parseInt(value));
+    }
+  }), "Z: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posZ,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setposZ(parseInt(value));
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Color: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: color,
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setColor(value);
+    }
+  }), "Line width: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.5",
+    max: "5",
+    step: "0.001",
+    type: "range",
+    value: linewidth,
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setLineWidth(parseInt(value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/LineGeometry.jsx"
   }, " Source ")));
 });
 
@@ -8164,10 +9662,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Octahedron"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Octahedron"] // Geometry properties:
+  , {
     radius: 30,
-    detail: 0,
-    color: "#999999"
+    detail: 0 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8192,16 +9697,223 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Plane"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Plane"] // Geometry properties:
+  , {
     width: 50,
     height: 90,
     widthSegments: 10,
-    heightSegments: 20,
-    color: "#999999"
+    heightSegments: 20 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/PlaneGeometry.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/geometries/PointGeometry.jsx":
+/*!*****************************************************!*\
+  !*** ./example/scenes/geometries/PointGeometry.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      posX = _useState2[0],
+      setposX = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      posY = _useState4[0],
+      setposY = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      posZ = _useState6[0],
+      setposZ = _useState6[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Point"] // No geometry properties:
+  // Material:
+  , {
+    material: {
+      type: "PointsMaterial",
+      colors: {
+        color: "#ff0000"
+      }
+    } // Mesh properties:
+    ,
+    position: {
+      x: posX,
+      y: posY,
+      z: posZ
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posX,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setposX(parseInt(value));
+    }
+  }), "Y: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posY,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setposY(parseInt(value));
+    }
+  }), "Z: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posZ,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setposZ(parseInt(value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/PointGeometry.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/geometries/PointsGeometry.jsx":
+/*!******************************************************!*\
+  !*** ./example/scenes/geometries/PointsGeometry.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      posX = _useState2[0],
+      setposX = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      posY = _useState4[0],
+      setposY = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      posZ = _useState6[0],
+      setposZ = _useState6[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Points"] // Geometry properties:
+  , {
+    points: [[100, 0, 0], [posX, posY, posZ], [0, 100, 0]] // Material:
+    ,
+    material: {
+      type: "PointsMaterial",
+      colors: {
+        color: "#ff0000"
+      },
+      values: {
+        size: 10
+      }
+    } // Mesh properties:
+    ,
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "X: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posX,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setposX(parseInt(value));
+    }
+  }), "Y: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posY,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setposY(parseInt(value));
+    }
+  }), "Z: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0",
+    max: "50",
+    step: "1",
+    type: "range",
+    value: posZ,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setposZ(parseInt(value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/PointsGeometry.jsx"
   }, " Source ")));
 });
 
@@ -8222,12 +9934,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Polyhedron"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Polyhedron"] // Geometry properties:
+  , {
     vertices: [-20, -10, -10, 10, -10, -10, 10, 10, -10, -10, 10, -10, -10, -10, 20, 10, -10, 10, 10, 10, 10, -10, 10, 10],
     indices: [2, 1, 0, 0, 3, 2, 0, 4, 7, 7, 3, 0, 0, 1, 5, 5, 4, 0, 1, 2, 6, 6, 5, 1, 2, 3, 7, 7, 6, 2, 4, 5, 6, 6, 7, 4],
     radius: 30,
-    detail: 1,
-    color: "#999999"
+    detail: 1 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8252,14 +9971,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Ring"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Ring"] // Geometry properties:
+  , {
     innerRadius: 20,
     outerRadius: 35,
     thetaSegments: 32,
     phiSegments: 5,
     thetaStart: 0,
-    thetaLength: Math.PI * 2 * 0.9,
-    color: "#999999"
+    thetaLength: Math.PI * 2 * 0.9 // Material
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8284,9 +10010,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Shape"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Shape"] // Geometry properties:
+  , {
     shape: [["move", 10, 10], ["line", 10, 0], ["line", 0, 0], ["line", 0, 20], ["bezierCurve", 10, 40, 20, 30, 10, 10]],
-    curveSegments: 20,
+    curveSegments: 20 // Material: 
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    },
     color: "#999999"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
@@ -8312,19 +10046,77 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Sphere"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Sphere"] // Geometry properties:
+  , {
     radius: 40,
     widthSegments: 30,
     heightSegments: 30,
     phiStart: 0,
     phiLength: Math.PI * 2 * 0.9,
     thetaStart: 0,
-    thetaLength: Math.PI * 0.9,
-    color: "#999999"
+    thetaLength: Math.PI * 0.9 // Material
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/SphereGeometry.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/geometries/SpriteGeometry.jsx":
+/*!******************************************************!*\
+  !*** ./example/scenes/geometries/SpriteGeometry.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Sprite"] // Geometry properties:
+  // Material:
+  , {
+    material: {
+      type: "SpriteMaterial",
+      textures: {
+        map: "/textures/sprite.png"
+      },
+      colors: {
+        color: "#999999"
+      },
+      values: {
+        sizeAttenuation: false
+      }
+    } // Mesh properties:
+    ,
+    rotation: {
+      x: -Math.PI / 2,
+      y: 0,
+      z: 0
+    },
+    scale: 0.1,
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/SpriteGeometry.jsx"
   }, " Source ")));
 });
 
@@ -8345,14 +10137,75 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Tetrahedron"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Tetrahedron"] // Geometry properties:
+  , {
     radius: 30,
-    detail: 0,
-    color: "#999999"
+    detail: 0 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/TetrahedronGeometry.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/geometries/TextGeometry.jsx":
+/*!****************************************************!*\
+  !*** ./example/scenes/geometries/TextGeometry.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Text"] // Geometry properties:
+  , {
+    text: "This is awesome!!!",
+    font: "/fonts/helvetiker_regular.typeface.json",
+    size: 30,
+    height: 5,
+    curveSegments: 12,
+    bevelEnabled: true,
+    bevelThickness: 1,
+    bevelSize: 2,
+    bevelOffset: 2,
+    bevelSegments: 2 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    } // Mesh properties:
+    ,
+    rotation: {
+      x: -Math.PI / 2,
+      y: 0,
+      z: 0
+    },
+    position: {
+      x: -70,
+      y: -0,
+      z: 0
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/TextGeometry.jsx"
   }, " Source ")));
 });
 
@@ -8373,13 +10226,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Torus"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Torus"] // Geometry properties:
+  , {
     radius: 40,
     tube: 12,
     radialSegments: 32,
     tubularSegments: 32,
-    arc: Math.PI * 2 * 0.9,
-    color: "#999999"
+    arc: Math.PI * 2 * 0.9 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8404,14 +10264,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"] // Geometry properties:
+  , {
     radius: 40,
     tube: 7,
     tubularSegments: 32,
     radialSegments: 32,
     p: 3,
-    q: 2,
-    color: "#999999"
+    q: 2 // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -8436,18 +10303,5354 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Tube"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Tube"] // Geometry properties:
+  , {
     path: [[1, 1, 1], [100, 100, 0], [-100, 100, -200], [100, -100, 100]],
     tubularSegments: 120,
     radialSegments: 12,
     radius: 10,
-    closed: true,
-    color: "#999999"
+    closed: true // Material:
+    ,
+    material: {
+      type: "MeshPhongMaterial",
+      colors: {
+        color: "#999999"
+      }
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "links-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/geometries/TubeGeometry.jsx"
   }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/LineBasicMaterial.jsx":
+/*!********************************************************!*\
+  !*** ./example/scenes/materials/LineBasicMaterial.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "LineBasicMaterial",
+    colors: {
+      color: "#008888"
+    },
+    constants: {
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      linewidth: 1,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+    points: [[50, 25, 25], [0, 0, 0], [-50, 25, 25]],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "Color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Line width:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.1",
+    max: "10",
+    step: "0.001",
+    type: "range",
+    value: materialProps.values.linewidth,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          linewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.linewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/LineBasicMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/LineDashedMaterial.jsx":
+/*!*********************************************************!*\
+  !*** ./example/scenes/materials/LineDashedMaterial.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("#ffffff"),
+      _useState2 = _slicedToArray(_useState, 2),
+      color = _useState2[0],
+      setColor = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      linewidth = _useState4[0],
+      setLinewidth = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState6 = _slicedToArray(_useState5, 2),
+      scale = _useState6[0],
+      setScale = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(20),
+      _useState8 = _slicedToArray(_useState7, 2),
+      dashSize = _useState8[0],
+      setDashSize = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(33),
+      _useState10 = _slicedToArray(_useState9, 2),
+      gapSize = _useState10[0],
+      setGapSize = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "LineDashedMaterial",
+    colors: {
+      color: "#008888"
+    },
+    constants: {
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      linewidth: 1,
+      scale: 1,
+      dashSize: 20,
+      gapSize: 20,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState12 = _slicedToArray(_useState11, 2),
+      materialProps = _useState12[0],
+      setMaterialProps = _useState12[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+    points: [[50, 25, 25], [0, 0, 0], [-50, 25, 25]],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "linewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.1",
+    max: "10",
+    step: "0.001",
+    type: "range",
+    value: materialProps.values.linewidth,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          linewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.linewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "scale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.1",
+    max: "10",
+    step: "0.001",
+    type: "range",
+    value: materialProps.values.scale,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          scale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.linewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "dashSize:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.1",
+    max: "20",
+    step: "0.001",
+    type: "range",
+    value: materialProps.values.dashSize,
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          dashSize: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.dashSize, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "gapSize:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    min: "0.1",
+    max: "20",
+    step: "0.001",
+    type: "range",
+    value: materialProps.values.gapSize,
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          gapSize: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.gapSize, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/LineDashedMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshBasicMaterial.jsx":
+/*!********************************************************!*\
+  !*** ./example/scenes/materials/MeshBasicMaterial.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshBasicMaterial",
+    // Textures:
+    textures: {
+      map: "/textures/brick/ruin_wall_01.png",
+      alphaMap: "/textures/test.png",
+      aoMap: "/textures/brick/ruin_wall_03.png",
+      envMap: "/textures/brick/ruin_wall_03.png",
+      lightMap: "/textures/brick/ruin_wall_03.png",
+      specularMap: "/textures/brick/ruin_wall_03.png"
+    },
+    constants: {
+      combine: "MultiplyOperation",
+      // MultiplyOperation, MixOperation, AddOperation
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    colors: {
+      color: "#ff8888"
+    },
+    vectors2: {},
+    values: {
+      reflectivity: 0.4,
+      // Float (0 - 1)
+      refractionRatio: 0.4,
+      // < 1
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      lightMapIntensity: 100,
+      // Float
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 50, 50],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "Color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "reflectivity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.reflectivity,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          reflectivity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.reflectivity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "refractionRatio:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.refractionRatio,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          refractionRatio: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.refractionRatio, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "lightMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.lightMapIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          lightMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.lightMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "combine:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.combine,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          combine: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MultiplyOperation"
+  }, "MultiplyOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MixOperation"
+  }, "MixOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AddOperation"
+  }, "AddOperation")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.combine, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.combine,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.combine,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshBasicMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshDepthMaterial.jsx":
+/*!********************************************************!*\
+  !*** ./example/scenes/materials/MeshDepthMaterial.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _values;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshDepthMaterial",
+    // Textures
+    textures: {
+      alphaMap: "/textures/test.png",
+      displacementMap: "/textures/test.png",
+      map: "/textures/brick/ruin_wall_01.png"
+    },
+    constants: {
+      depthPacking: "BasicDepthPacking",
+      // LinearEncoding,	sRGBEncoding,	GammaEncoding,	RGBEEncoding,	LogLuvEncoding,	RGBM7Encoding,	RGBM16Encoding,	RGBDEncoding,	BasicDepthPacking,	RGBADepthPacking
+      blending: "NoBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: (_values = {
+      displacementScale: 2,
+      displacementBias: 2,
+      fog: true,
+      wireframe: false,
+      wireframeLinewidth: 2,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff
+    }, _defineProperty(_values, "fog", true), _defineProperty(_values, "polygonOffset", true), _defineProperty(_values, "polygonOffsetFactor", 2), _defineProperty(_values, "polygonOffsetUnits", 2), _defineProperty(_values, "precision", "lowp"), _defineProperty(_values, "premultipliedAlpha", true), _defineProperty(_values, "dithering", true), _defineProperty(_values, "toneMapped", true), _defineProperty(_values, "vertexColors", false), _defineProperty(_values, "visible", true), _values)
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 50, 50],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: 1000,
+    color: "#ffffff",
+    material: {
+      constants: {
+        side: "BackSide"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "depthPacking:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.depthPacking,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          depthPacking: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LinearEncoding"
+  }, "LinearEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "sRGBEncoding"
+  }, "sRGBEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "GammaEncoding"
+  }, "GammaEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "RGBEEncoding"
+  }, "RGBEEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LogLuvEncoding"
+  }, "LogLuvEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "RGBM7Encoding"
+  }, "RGBM7Encoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "RGBM16Encoding"
+  }, "RGBM16Encoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "RGBDEncoding"
+  }, "RGBDEncoding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "BasicDepthPacking"
+  }, "BasicDepthPacking"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "RGBADepthPacking"
+  }, "RGBADepthPacking")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.depthPacking, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "fog:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.fog,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          fog: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.fog + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshDepthMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshDistanceMaterial.jsx":
+/*!***********************************************************!*\
+  !*** ./example/scenes/materials/MeshDistanceMaterial.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _values;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshDistanceMaterial",
+    textures: {
+      map: "/textures/brick/ruin_wall_01.png",
+      alphaMap: "/textures/test.png",
+      displacementMap: "/textures/test.png"
+    },
+    constants: {
+      blending: "NoBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: (_values = {
+      displacementScale: 2,
+      displacementBias: 2,
+      farDistance: 20,
+      nearDistance: 20,
+      fog: true,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff
+    }, _defineProperty(_values, "fog", true), _defineProperty(_values, "polygonOffset", true), _defineProperty(_values, "polygonOffsetFactor", 2), _defineProperty(_values, "polygonOffsetUnits", 2), _defineProperty(_values, "precision", "lowp"), _defineProperty(_values, "premultipliedAlpha", true), _defineProperty(_values, "dithering", true), _defineProperty(_values, "toneMapped", true), _defineProperty(_values, "vertexColors", false), _defineProperty(_values, "visible", true), _values)
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 50, 50],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: 1000,
+    color: "#ffffff",
+    material: {
+      constants: {
+        side: "BackSide"
+      }
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "farDistance:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.farDistance,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          farDistance: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.farDistance, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "nearDistance:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.nearDistance,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          nearDistance: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.nearDistance, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "fog:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.fog,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          fog: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.fog + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshDistanceMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshLambertMaterial.jsx":
+/*!**********************************************************!*\
+  !*** ./example/scenes/materials/MeshLambertMaterial.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshLambertMaterial",
+    textures: {
+      alphaMap: "/textures/test.png",
+      aoMap: "/textures/brick/ruin_wall_03.png",
+      emissiveMap: "/textures/brick/ruin_wall_03.png",
+      envMap: "/textures/brick/ruin_wall_03.png",
+      lightMap: "/textures/brick/ruin_wall_03.png",
+      specularMap: "/textures/brick/ruin_wall_03.png"
+    },
+    colors: {
+      color: "#ff8888",
+      emissive: "#ff8888"
+    },
+    constants: {
+      combine: "MultiplyOperation",
+      // MultiplyOperation, MixOperation, AddOperation
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      emissiveIntensity: 2,
+      reflectivity: 0.4,
+      // Float (0 - 1)
+      refractionRatio: 0.4,
+      // < 1
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 50, 50],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "Color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Emissive:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.emissive,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          emissive: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.emissive, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "combine:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.combine,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          combine: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MultiplyOperation"
+  }, "MultiplyOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MixOperation"
+  }, "MixOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AddOperation"
+  }, "AddOperation")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.combine, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissiveIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.emissiveIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          emissiveIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.emissiveIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "reflectivity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.reflectivity,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          reflectivity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.reflectivity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "refractionRatio:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.refractionRatio,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          refractionRatio: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.refractionRatio, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinecap,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinejoin,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshLambertMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshMatcapMaterial.jsx":
+/*!*********************************************************!*\
+  !*** ./example/scenes/materials/MeshMatcapMaterial.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshMatcapMaterial",
+    textures: {
+      map: "/textures/brick/ruin_wall_01.png",
+      alphaMap: "/textures/test.png",
+      bumpMap: "/textures/test.png",
+      displacementMap: "/textures/test.png",
+      matcap: "/textures/test.png",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png"
+    },
+    colors: {
+      color: "#ff8888"
+    },
+    constants: {
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      bumpScale: 0.5,
+      // 0 - 1
+      displacementScale: 2,
+      displacementBias: 2,
+      flatShading: false,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    },
+    vectors2: {
+      normalScale: [1, 1] // x, y
+
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "flatShading:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.flatShading,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          flatShading: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.flatShading + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale X:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[0],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [parseFloat(value), materialProps.vectors2.normalScale[1]]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[0], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale Y:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[1],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [materialProps.vectors2.normalScale[0], parseFloat(value)]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[1], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshMatcapMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshNormalMaterial.jsx":
+/*!*********************************************************!*\
+  !*** ./example/scenes/materials/MeshNormalMaterial.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _values;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshNormalMaterial",
+    // Textures
+    textures: {
+      bumpMap: "/textures/bumpmap.jpg",
+      displacementMap: "/textures/test.png",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png"
+    },
+    colors: {
+      color: "#ff8888"
+    },
+    constants: {
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: (_values = {
+      bumpScale: 0.5,
+      // 0 - 1
+      displacementScale: 2,
+      displacementBias: 2,
+      flatShading: false,
+      fog: true,
+      wireframe: false,
+      wireframeLinewidth: 2,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff
+    }, _defineProperty(_values, "fog", true), _defineProperty(_values, "polygonOffset", true), _defineProperty(_values, "polygonOffsetFactor", 2), _defineProperty(_values, "polygonOffsetUnits", 2), _defineProperty(_values, "precision", "lowp"), _defineProperty(_values, "premultipliedAlpha", true), _defineProperty(_values, "dithering", true), _defineProperty(_values, "toneMapped", true), _defineProperty(_values, "vertexColors", false), _defineProperty(_values, "visible", true), _values)
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "Color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "flatShading:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.flatShading,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          flatShading: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.flatShading + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "fog:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.fog,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          fog: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.fog + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "10",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshNormalMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshPhongMaterial.jsx":
+/*!********************************************************!*\
+  !*** ./example/scenes/materials/MeshPhongMaterial.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshPhongMaterial",
+    textures: {
+      aoMap: "/textures/brick/ruin_wall_03.png",
+      map: "/textures/brick/ruin_wall_01.png",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png",
+      alphaMap: "/textures/brick/ruin_wall_03_rough.png",
+      displacementMap: "/textures/test.png",
+      bumpMap: "/textures/brick/ruin_wall_03_height.png",
+      emissiveMap: "/textures/brick/ruin_wall_03.png",
+      envMap: "/textures/bumpmap.jpg",
+      lightMap: "/textures/test.png",
+      specularMap: "/textures/brick/ruin_wall_03_norm.png"
+    },
+    colors: {
+      color: "#ff8888",
+      emissive: "#ff8888",
+      specular: "#ff8888"
+    },
+    constants: {
+      combine: "MultiplyOperation",
+      // MultiplyOperation, MixOperation, AddOperation
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      bumpScale: 0.5,
+      // 0 - 1
+      displacementScale: 2,
+      displacementBias: 2,
+      emissiveIntensity: 0.5,
+      flatShading: false,
+      lightMapIntensity: 100,
+      // Float
+      reflectivity: 0.4,
+      // Float (0 - 1)
+      refractionRatio: 0.4,
+      // < 1
+      shininess: 30,
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    },
+    vectors2: {
+      normalScale: [1, 1] // x, y
+
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissive:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.emissive,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          emissive: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.emissive, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "specular:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.specular,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          specular: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.specular, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "combine:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.combine,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          combine: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MultiplyOperation"
+  }, "MultiplyOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MixOperation"
+  }, "MixOperation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AddOperation"
+  }, "AddOperation")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.combine, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissiveIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.emissiveIntensity,
+    type: "range",
+    min: "0",
+    max: "2",
+    step: "0.01",
+    onChange: function onChange(_ref8) {
+      var value = _ref8.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          emissiveIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.emissiveIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "flatShading:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.flatShading,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          flatShading: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.flatShading + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "lightMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.lightMapIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref9) {
+      var value = _ref9.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          lightMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.lightMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale X:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[0],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref10) {
+      var value = _ref10.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [parseFloat(value), materialProps.vectors2.normalScale[1]]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[0], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale Y:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[1],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref11) {
+      var value = _ref11.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [materialProps.vectors2.normalScale[0], parseFloat(value)]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[1], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "reflectivity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.reflectivity,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref12) {
+      var value = _ref12.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          reflectivity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.reflectivity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "refractionRatio:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.refractionRatio,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref13) {
+      var value = _ref13.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          refractionRatio: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.refractionRatio, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "shininess:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.shininess,
+    type: "range",
+    min: "0",
+    max: "1000",
+    step: "0.01",
+    onChange: function onChange(_ref14) {
+      var value = _ref14.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          shininess: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.shininess, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinecap,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinejoin,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref15) {
+      var value = _ref15.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshPhongMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshPhysicalMaterial.jsx":
+/*!***********************************************************!*\
+  !*** ./example/scenes/materials/MeshPhysicalMaterial.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshPhysicalMaterial",
+    // Textures
+    textures: {
+      alphaMap: "/textures/brick/ruin_wall_03_rough.png",
+      aoMap: "/textures/brick/ruin_wall_03_rough.png",
+      bumpMap: "/textures/brick/ruin_wall_03_height.png",
+      displacementMap: "/textures/test.png",
+      envMap: "/textures/bumpmap.jpg",
+      lightMap: "/textures/test.png",
+      map: "/textures/brick/ruin_wall_01.png",
+      metalnessMap: "/textures/bumpmap.jpg",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png",
+      roughnessMap: "/textures/brick/ruin_wall_03_norm.png",
+      clearcoatMap: "/textures/brick/ruin_wall_03.png",
+      clearcoatNormalMap: "/textures/brick/ruin_wall_03.png",
+      clearcoatRoughnessMap: "/textures/brick/ruin_wall_03.png",
+      sheenRoughnessMap: "/textures/brick/ruin_wall_03.png",
+      sheenColorMap: "/textures/brick/ruin_wall_03.png",
+      transmissionMap: "/textures/brick/ruin_wall_03_norm.png"
+    },
+    colors: {
+      color: "#ff8888",
+      emissive: "#ff8888",
+      sheenColor: "#ff8888"
+    },
+    constants: {
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      bumpScale: 0.5,
+      // 0 - 1
+      defines: {
+        'STANDARD': '',
+        'PHYSICAL': ''
+      },
+      displacementScale: 2,
+      displacementBias: 2,
+      emissiveIntensity: 0.5,
+      envMapIntensity: 10,
+      // Float
+      flatShading: false,
+      lightMapIntensity: 100,
+      // Float
+      metalness: 30,
+      refractionRatio: 0.4,
+      // < 1
+      roughness: 0.5,
+      // 0 - 1
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      clearcoat: 0.5,
+      // Float, 0 - 1
+      clearcoatRoughness: 0.5,
+      // Float 0 - 1
+      ior: 1.5,
+      // Float, 1 - 2.333
+      reflectivity: 0.5,
+      // Float 0 - 1
+      sheen: 0.5,
+      // Float 0 - 1
+      sheenRoughness: 0.5,
+      // Float 0 - 1
+      transmission: 0.5,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    },
+    vectors2: {
+      normalScale: [1, 1],
+      // x, y
+      clearcoatNormalScale: [1, 1] // x, y
+
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissive:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.emissive,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          emissive: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.emissive, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sheenColor:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.sheenColor,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          sheenColor: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.sheenColor, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissiveIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.emissiveIntensity,
+    type: "range",
+    min: "0",
+    max: "2",
+    step: "0.01",
+    onChange: function onChange(_ref8) {
+      var value = _ref8.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          emissiveIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.emissiveIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "envMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.envMapIntensity,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref9) {
+      var value = _ref9.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          envMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.envMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "flatShading:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.flatShading,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          flatShading: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.flatShading + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "lightMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.lightMapIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref10) {
+      var value = _ref10.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          lightMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.lightMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "metalness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.metalness,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "0.01",
+    onChange: function onChange(_ref11) {
+      var value = _ref11.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          metalness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.metalness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale X:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[0],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref12) {
+      var value = _ref12.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [parseFloat(value), materialProps.vectors2.normalScale[1]]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[0], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale Y:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[1],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref13) {
+      var value = _ref13.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [materialProps.vectors2.normalScale[0], parseFloat(value)]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[1], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "refractionRatio:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.refractionRatio,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref14) {
+      var value = _ref14.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          refractionRatio: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.refractionRatio, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "roughness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.roughness,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref15) {
+      var value = _ref15.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          roughness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.roughness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinecap,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinejoin,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref16) {
+      var value = _ref16.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clearcoat:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.clearcoat,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref17) {
+      var value = _ref17.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          clearcoat: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.clearcoat, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clearcoatNormalScale X:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.clearcoatNormalScale[0],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref18) {
+      var value = _ref18.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          clearcoatNormalScale: [parseFloat(value), materialProps.vectors2.clearcoatNormalScale[1]]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.clearcoatNormalScale[0], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clearcoatNormalScale Y:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.clearcoatNormalScale[1],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref19) {
+      var value = _ref19.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          clearcoatNormalScale: [materialProps.vectors2.clearcoatNormalScale[0], parseFloat(value)]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.clearcoatNormalScale[1], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clearcoatRoughness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.clearcoatRoughness,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref20) {
+      var value = _ref20.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          clearcoatRoughness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.clearcoatRoughness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "ior:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.ior,
+    type: "range",
+    min: "1",
+    max: "2.33",
+    step: "0.01",
+    onChange: function onChange(_ref21) {
+      var value = _ref21.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          ior: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.ior, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "reflectivity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.reflectivity,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref22) {
+      var value = _ref22.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          reflectivity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.reflectivity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sheen:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.sheen,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref23) {
+      var value = _ref23.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          sheen: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.sheen, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sheenRoughness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.sheenRoughness,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref24) {
+      var value = _ref24.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          sheenRoughness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.sheenRoughness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "transmission:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.transmission,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref25) {
+      var value = _ref25.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          transmission: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.transmission, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshPhysicalMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshStandardMaterial.jsx":
+/*!***********************************************************!*\
+  !*** ./example/scenes/materials/MeshStandardMaterial.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshStandardMaterial",
+    // Textures
+    textures: {
+      alphaMap: "/textures/brick/ruin_wall_03_rough.png",
+      aoMap: "/textures/brick/ruin_wall_03_rough.png",
+      bumpMap: "/textures/brick/ruin_wall_03_height.png",
+      displacementMap: "/textures/test.png",
+      envMap: "/textures/bumpmap.jpg",
+      lightMap: "/textures/test.png",
+      map: "/textures/brick/ruin_wall_01.png",
+      metalnessMap: "/textures/bumpmap.jpg",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png",
+      roughnessMap: "/textures/brick/ruin_wall_03_norm.png"
+    },
+    colors: {
+      color: "#ff8888",
+      emissive: "#ff8888"
+    },
+    constants: {
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      bumpScale: 0.5,
+      // 0 - 1
+      defines: {
+        'STANDARD': ''
+      },
+      displacementScale: 2,
+      displacementBias: 2,
+      emissiveIntensity: 0.5,
+      envMapIntensity: 10,
+      // Float
+      flatShading: false,
+      lightMapIntensity: 100,
+      // Float
+      metalness: 30,
+      refractionRatio: 0.4,
+      // < 1
+      roughness: 0.5,
+      // 0 - 1
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    },
+    vectors2: {
+      normalScale: [1, 1] // x, y
+
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissive:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.emissive,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          emissive: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.emissive, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissiveIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.emissiveIntensity,
+    type: "range",
+    min: "0",
+    max: "2",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          emissiveIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.emissiveIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "envMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.envMapIntensity,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref8) {
+      var value = _ref8.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          envMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.envMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "flatShading:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.flatShading,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          flatShading: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.flatShading + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "lightMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.lightMapIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref9) {
+      var value = _ref9.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          lightMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.lightMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "metalness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.metalness,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "0.01",
+    onChange: function onChange(_ref10) {
+      var value = _ref10.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          metalness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.metalness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale X:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[0],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref11) {
+      var value = _ref11.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [parseFloat(value), materialProps.vectors2.normalScale[1]]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[0], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalScale Y:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.vectors2.normalScale[1],
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.02",
+    onChange: function onChange(_ref12) {
+      var value = _ref12.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        vectors2: _objectSpread(_objectSpread({}, materialProps.vectors2), {}, {
+          normalScale: [materialProps.vectors2.normalScale[0], parseFloat(value)]
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.vectors2.normalScale[1], "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "refractionRatio:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.refractionRatio,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref13) {
+      var value = _ref13.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          refractionRatio: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.refractionRatio, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "roughness:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.roughness,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref14) {
+      var value = _ref14.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          roughness: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.roughness, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinecap,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinejoin,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref15) {
+      var value = _ref15.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshStandardMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/MeshToonMaterial.jsx":
+/*!*******************************************************!*\
+  !*** ./example/scenes/materials/MeshToonMaterial.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "MeshToonMaterial",
+    textures: {
+      map: "/textures/brick/ruin_wall_01.png",
+      alphaMap: "/textures/brick/ruin_wall_03_rough.png",
+      aoMap: "/textures/brick/ruin_wall_03.png",
+      bumpMap: "/textures/brick/ruin_wall_03_height.png",
+      displacementMap: "/textures/test.png",
+      emissiveMap: "/textures/brick/ruin_wall_03.png",
+      gradientMap: "/textures/brick/ruin_wall_03_height.png",
+      lightMap: "/textures/test.png",
+      normalMap: "/textures/brick/ruin_wall_03_norm.png" // envMap:  "/textures/bumpmap.jpg",
+      // specularMap:  "/textures/brick/ruin_wall_03_norm.png",
+
+    },
+    colors: {
+      color: "#ff8888",
+      emissive: "#ff8888" // specular: "#ff8888",
+
+    },
+    constants: {
+      normalMapType: "TangentSpaceNormalMap",
+      // TangentSpaceNormalMap,	ObjectSpaceNormalMap
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      aoMapIntensity: 0.5,
+      // 0 - 1
+      bumpScale: 0.5,
+      // 0 - 1
+      displacementScale: 2,
+      displacementBias: 2,
+      emissiveIntensity: 0.5,
+      lightMapIntensity: 100,
+      // Float
+      wireframe: false,
+      wireframeLinecap: "round",
+      // "butt" and "square"
+      wireframeLinejoin: "round",
+      // "butt", "mitter"
+      wireframeLinewidth: 2,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    },
+    vectors2: {
+      normalScale: [1, 1] // x, y
+
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["TorusKnot"], {
+    scale: 10,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissive:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.emissive,
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          emissive: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.emissive, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "aoMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.aoMapIntensity,
+    type: "range",
+    min: "0",
+    max: "0.99",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          aoMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.aoMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "bumpScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.bumpScale,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          bumpScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.bumpScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementScale:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementScale,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementScale: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementScale, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "displacementBias:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.displacementBias,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          displacementBias: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.displacementBias, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "emissiveIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.emissiveIntensity,
+    type: "range",
+    min: "0",
+    max: "2",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          emissiveIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.emissiveIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "lightMapIntensity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.lightMapIntensity,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref8) {
+      var value = _ref8.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          lightMapIntensity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.lightMapIntensity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "normalMapType:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.normalMapType,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          normalMapType: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "TangentSpaceNormalMap"
+  }, "TangentSpaceNormalMap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ObjectSpaceNormalMap"
+  }, "ObjectSpaceNormalMap")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.normalMapType, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframe:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.wireframe,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframe: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframe + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinecap:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinecap,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinecap: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinecap, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinejoin:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.wireframeLinejoin,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinejoin: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "round"
+  }, "round"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "butt"
+  }, "butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "square"
+  }, "square")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinejoin, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "wireframeLinewidth:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.wireframeLinewidth,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref9) {
+      var value = _ref9.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          wireframeLinewidth: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.wireframeLinewidth, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/MeshToonMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/PointsMaterial.jsx":
+/*!*****************************************************!*\
+  !*** ./example/scenes/materials/PointsMaterial.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "PointsMaterial",
+    colors: {
+      color: "#008888"
+    },
+    constants: {
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      size: 10,
+      sizeAttenuation: true,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: false,
+      opacity: 0.95,
+      alphaTest: 0.5,
+      //   0 - 1
+      alphaToCoverage: 0.2,
+      // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Points"], {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    points: [[20, 0, 0], [0, 0, 0], [0, 20, 0]],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "size:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.size,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          size: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.size, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sizeAttenuation:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.sizeAttenuation,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          sizeAttenuation: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.sizeAttenuation + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/PointsMaterial.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/RawShaderMaterial.jsx":
+/*!********************************************************!*\
+  !*** ./example/scenes/materials/RawShaderMaterial.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "RawShaderMaterial",
+    values: {
+      uniforms: {
+        time: {
+          value: 0.0
+        }
+      },
+      vertexShader: "\n\t\t\t\tprecision mediump float;\n\t\t\t\tprecision mediump int;\n\n\t\t\t\tuniform mat4 modelViewMatrix; // optional\n\t\t\t\tuniform mat4 projectionMatrix; // optional\n\n\t\t\t\tattribute vec3 position;\n\t\t\t\tattribute vec4 color;\n\n\t\t\t\tvarying vec3 vPosition;\n\t\t\t\tvarying vec4 vColor;\n\n\t\t\t\tvoid main()\t{\n\n\t\t\t\t\tvPosition = position;\n\t\t\t\t\tvColor = color;\n\n\t\t\t\t\tgl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n\n\t\t\t\t}\n\t\t\t",
+      fragmentShader: "\n\t\t\t\tprecision mediump float;\n\t\t\t\tprecision mediump int;\n\n\t\t\t\tuniform float time;\n\n\t\t\t\tvarying vec3 vPosition;\n\t\t\t\tvarying vec4 vColor;\n\n\t\t\t\tvoid main()\t{\n\n\t\t\t\t\tvec4 color = vec4( vColor );\n\t\t\t\t\tcolor.r += sin( vPosition.x * 10.0 + time ) * 0.5;\n\n\t\t\t\t\tgl_FragColor = color;\n\n\t\t\t\t}\n\t\t\t"
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 25, 25],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "uniforms.time:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.uniforms.time.value,
+    type: "range",
+    min: "0",
+    max: Math.PI * 2,
+    step: "0.01",
+    onChange: function onChange(e) {
+      materialProps.values.uniforms.time.value = parseFloat(e.target.value);
+      setMaterialProps(_objectSpread({}, materialProps));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.uniforms.time.value, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/RawShaderMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/ShaderMaterial.jsx":
+/*!*****************************************************!*\
+  !*** ./example/scenes/materials/ShaderMaterial.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "RawShaderMaterial",
+    values: {
+      uniforms: {
+        time: {
+          value: 0.0
+        }
+      },
+      vertexShader: "\n\t\t\t\tprecision mediump float;\n\t\t\t\tprecision mediump int;\n\n\t\t\t\tuniform mat4 modelViewMatrix; // optional\n\t\t\t\tuniform mat4 projectionMatrix; // optional\n\n\t\t\t\tattribute vec3 position;\n\t\t\t\tattribute vec4 color;\n\n\t\t\t\tvarying vec3 vPosition;\n\t\t\t\tvarying vec4 vColor;\n\n\t\t\t\tvoid main()\t{\n\n\t\t\t\t\tvPosition = position;\n\t\t\t\t\tvColor = color;\n\n\t\t\t\t\tgl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n\n\t\t\t\t}\n\t\t\t",
+      fragmentShader: "\n\t\t\t\tprecision mediump float;\n\t\t\t\tprecision mediump int;\n\n\t\t\t\tuniform float time;\n\n\t\t\t\tvarying vec3 vPosition;\n\t\t\t\tvarying vec4 vColor;\n\n\t\t\t\tvoid main()\t{\n\n\t\t\t\t\tvec4 color = vec4( vColor );\n\t\t\t\t\tcolor.r += sin( vPosition.x * 10.0 + time ) * 0.5;\n\n\t\t\t\t\tgl_FragColor = color;\n\n\t\t\t\t}\n\t\t\t"
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    size: [50, 25, 25],
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "uniforms.time:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.uniforms.time.value,
+    type: "range",
+    min: "0",
+    max: Math.PI * 2,
+    step: "0.01",
+    onChange: function onChange(e) {
+      materialProps.values.uniforms.time.value = parseFloat(e.target.value);
+      setMaterialProps(_objectSpread({}, materialProps));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.uniforms.time.value, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/ShaderMaterial.jsx"
+  }, " Code ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/ShadowMaterial.jsx":
+/*!*****************************************************!*\
+  !*** ./example/scenes/materials/ShadowMaterial.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    // type: "MeshStandardMaterial",
+    type: "ShadowMaterial",
+    colors: {
+      color: "#0d0c0c"
+    },
+    constants: {
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: true,
+      opacity: 1,
+      alphaTest: 0,
+      //   0 - 1
+      // alphaToCoverage: 0.2, // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["PointLight"] // debug={true}
+  , {
+    castShadow: true,
+    position: {
+      x: 0,
+      y: 0,
+      z: -30
+    },
+    color: "#ff0000",
+    intensity: 2
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    castShadow: true,
+    size: [10, 10, 3],
+    position: {
+      x: 0,
+      y: 0,
+      z: -15
+    },
+    material: {
+      type: "MeshBasicMaterial"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    receiveShadow: true,
+    size: [100, 100, 10] // position={ { x: -50, y: -50, z: 0} }
+    ,
+    material: materialProps
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "size:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.size,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          size: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.size, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sizeAttenuation:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.sizeAttenuation,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          sizeAttenuation: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.sizeAttenuation + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/ShadowMaterial.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/SpriteMaterial.jsx":
+/*!*****************************************************!*\
+  !*** ./example/scenes/materials/SpriteMaterial.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _orbits_engine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @orbits/engine */ "../hq/orbits-engine/index.js");
+/* harmony import */ var _CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_CommonMaterialPropertiesForm.jsx */ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    type: "SpriteMaterial",
+    textures: {
+      map: "/textures/sprite.png",
+      alphaMap: "/textures/brick/ruin_wall_03_height.png"
+    },
+    colors: {
+      color: "#999999"
+    },
+    constants: {
+      blending: "NormalBlending",
+      // NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending
+      blendDst: "OneMinusSrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor
+      blendSrc: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      blendSrcAlpha: "SrcAlphaFactor",
+      // ZeroFactor,	OneFactor,	SrcColorFactor,	OneMinusSrcColorFactor,	SrcAlphaFactor,	OneMinusSrcAlphaFactor,	DstAlphaFactor,	OneMinusDstAlphaFactor,	DstColorFactor,	OneMinusDstColorFactor,	SrcAlphaSaturateFactor
+      depthFunc: "LessEqualDepth",
+      // NeverDepth, AlwaysDepth, EqualDepth, LessDepth, LessEqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
+      stencilFunc: "AlwaysStencilFunc",
+      // NeverStencilFunc, LessStencilFunc, EqualStencilFunc, LessEqualStencilFunc, GreaterStencilFunc, NotEqualStencilFunc, GreaterEqualStencilFunc, AlwaysStencilFunc, LineBasicMaterial
+      stencilFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZFail: "ZeroStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      stencilZPass: "KeepStencilOp",
+      // ZeroStencilOp,	KeepStencilOp,	ReplaceStencilOp,	IncrementStencilOp,	DecrementStencilOp,	IncrementWrapStencilOp,	DecrementWrapStencilOp,	InvertStencilOp
+      shadowSide: "FrontSide",
+      // BackSide, DoubleSide
+      side: "FrontSide" // BackSide, DoubleSide
+
+    },
+    values: {
+      sizeAttenuation: false,
+      rotation: Math.PI * 0.93,
+      // Common for all materials
+      // https://threejs.org/docs/?q=MeshBasic#api/en/materials/Material
+      transparent: true,
+      opacity: 1,
+      alphaTest: 0,
+      //   0 - 1
+      // alphaToCoverage: 0.2, // Float
+      blendDstAlpha: 2,
+      blendEquation: 2,
+      blendEquationAlpha: 2,
+      clipIntersection: false,
+      clippingPlanes: [],
+      // TODO - array of THREE.Plane objects
+      clipShadows: true,
+      colorWrite: true,
+      depthTest: true,
+      depthWrite: true,
+      stencilWrite: true,
+      stencilWriteMask: 0xff,
+      // bitmask
+      stencilRef: 0,
+      // Integer
+      stencilFuncMask: 0xff,
+      // bitmask
+      fog: true,
+      // needsUpdate: true, // Handled internbally
+      polygonOffset: true,
+      polygonOffsetFactor: 2,
+      // Integer
+      polygonOffsetUnits: 2,
+      // Integer
+      precision: "lowp",
+      // "highp", "mediump" or "lowp"
+      premultipliedAlpha: true,
+      dithering: true,
+      toneMapped: true,
+      vertexColors: false,
+      visible: true
+    }
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      materialProps = _useState2[0],
+      setMaterialProps = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_orbits_engine__WEBPACK_IMPORTED_MODULE_1__["Sprite"] // Geometry properties: none
+  // Material:
+  , {
+    material: materialProps // Mesh properties:
+    ,
+    scale: 0.1,
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, "color:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "color",
+    value: materialProps.colors.color,
+    onChange: function onChange(_ref) {
+      var value = _ref.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        colors: _objectSpread(_objectSpread({}, materialProps.colors), {}, {
+          color: value
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.colors.color, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "rotation:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.rotation,
+    type: "range",
+    min: "0",
+    max: Math.PI * 2,
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          rotation: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.rotation, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "sizeAttenuation:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.sizeAttenuation,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          sizeAttenuation: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.sizeAttenuation + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CommonMaterialPropertiesForm_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    state: materialProps,
+    setState: setMaterialProps
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/shstefanov/orbits-engine-examples/blob/master/example/scenes/materials/SpriteMaterial.jsx"
+  }, " Source ")));
+});
+
+/***/ }),
+
+/***/ "./example/scenes/materials/_CommonMaterialPropertiesForm.jsx":
+/*!********************************************************************!*\
+  !*** ./example/scenes/materials/_CommonMaterialPropertiesForm.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var state = _ref.state,
+      setState = _ref.setState;
+  var materialProps = state;
+  var setMaterialProps = setState;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Common Material Attributes"), "transparent:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.transparent,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          transparent: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.transparent + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "opacity:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.opacity,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref2) {
+      var value = _ref2.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          opacity: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.opacity, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "alphaTest:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.alphaTest,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref3) {
+      var value = _ref3.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          alphaTest: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.alphaTest, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "alphaToCoverage:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.alphaToCoverage,
+    type: "range",
+    min: "0",
+    max: "1",
+    step: "0.01",
+    onChange: function onChange(_ref4) {
+      var value = _ref4.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          alphaToCoverage: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.alphaToCoverage, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blending:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.blending,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          blending: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NoBlending"
+  }, "NoBlending"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NormalBlending"
+  }, "NormalBlending"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AdditiveBlending"
+  }, "AdditiveBlending"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SubtractiveBlending"
+  }, "SubtractiveBlending"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "MultiplyBlending"
+  }, "MultiplyBlending"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "CustomBlending"
+  }, "CustomBlending")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.blending, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendDst:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.blendDst,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          blendDst: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroFactor"
+  }, "ZeroFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneFactor"
+  }, "OneFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcColorFactor"
+  }, "SrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcColorFactor"
+  }, "OneMinusSrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcAlphaFactor"
+  }, "SrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcAlphaFactor"
+  }, "OneMinusSrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstAlphaFactor"
+  }, "DstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstAlphaFactor"
+  }, "OneMinusDstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstColorFactor"
+  }, "DstColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstColorFactor"
+  }, "OneMinusDstColorFactor")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.blendDst, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendDstAlpha (???):", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.blendDstAlpha,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref5) {
+      var value = _ref5.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          blendDstAlpha: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.blendDstAlpha, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendEquation (???):", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.blendEquation,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref6) {
+      var value = _ref6.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          blendEquation: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.blendEquation, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendEquationAlpha (???):", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.blendEquationAlpha,
+    type: "range",
+    min: "0",
+    max: "20",
+    step: "0.01",
+    onChange: function onChange(_ref7) {
+      var value = _ref7.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          blendEquationAlpha: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.blendEquationAlpha, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendSrc:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.blendSrc,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          blendSrc: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroFactor"
+  }, "ZeroFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneFactor"
+  }, "OneFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcColorFactor"
+  }, "SrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcColorFactor"
+  }, "OneMinusSrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcAlphaFactor"
+  }, "SrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcAlphaFactor"
+  }, "OneMinusSrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstAlphaFactor"
+  }, "DstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstAlphaFactor"
+  }, "OneMinusDstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstColorFactor"
+  }, "DstColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstColorFactor"
+  }, "OneMinusDstColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcAlphaSaturateFactor"
+  }, "SrcAlphaSaturateFactor")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.blendSrc, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blendSrcAlpha:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.blendSrcAlpha,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          blendSrcAlpha: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroFactor"
+  }, "ZeroFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneFactor"
+  }, "OneFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcColorFactor"
+  }, "SrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcColorFactor"
+  }, "OneMinusSrcColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcAlphaFactor"
+  }, "SrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusSrcAlphaFactor"
+  }, "OneMinusSrcAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstAlphaFactor"
+  }, "DstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstAlphaFactor"
+  }, "OneMinusDstAlphaFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DstColorFactor"
+  }, "DstColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "OneMinusDstColorFactor"
+  }, "OneMinusDstColorFactor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "SrcAlphaSaturateFactor"
+  }, "SrcAlphaSaturateFactor")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.blendSrcAlpha, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clipIntersection:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.clipIntersection,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          clipIntersection: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.clipIntersection + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clippingPlanes (!) ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "defines (!) ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "clipShadows:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.clipShadows,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          clipShadows: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.clipShadows + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "colorWrite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.colorWrite,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          colorWrite: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.colorWrite + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "depthFunc:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.depthFunc,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          depthFunc: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NeverDepth"
+  }, "NeverDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AlwaysDepth"
+  }, "AlwaysDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "EqualDepth"
+  }, "EqualDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LessDepth"
+  }, "LessDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LessEqualDepth"
+  }, "LessEqualDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "GreaterEqualDepth"
+  }, "GreaterEqualDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "GreaterDepth"
+  }, "GreaterDepth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NotEqualDepth"
+  }, "NotEqualDepth")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.depthFunc, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "depthTest:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.depthTest,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          depthTest: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.depthTest + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "depthWrite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.depthWrite,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          depthWrite: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.depthWrite + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilWrite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.stencilWrite,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          stencilWrite: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.stencilWrite + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilWriteMask:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.stencilWriteMask.toString(16),
+    type: "text",
+    onChange: function onChange(e) {
+      if (e.target.value.match(/^[0-9a-z]{0,2}$/)) {
+        setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+          values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+            stencilWriteMask: parseInt("0x" + (e.target.value || "00"), 16)
+          })
+        }));
+      }
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", "0x" + materialProps.values.stencilWriteMask.toString(16), "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilFunc:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.stencilFunc,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          stencilFunc: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NeverStencilFunc"
+  }, "NeverStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LessStencilFunc"
+  }, "LessStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "EqualStencilFunc"
+  }, "EqualStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LessEqualStencilFunc"
+  }, "LessEqualStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "GreaterStencilFunc"
+  }, "GreaterStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "NotEqualStencilFunc"
+  }, "NotEqualStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "GreaterEqualStencilFunc"
+  }, "GreaterEqualStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "AlwaysStencilFunc"
+  }, "AlwaysStencilFunc"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "LineBasicMaterial"
+  }, "LineBasicMaterial")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.stencilFunc, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilRef:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.stencilRef,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref8) {
+      var value = _ref8.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          stencilRef: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.stencilRef, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilFuncMask:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.stencilFuncMask.toString(16),
+    type: "text",
+    onChange: function onChange(e) {
+      if (e.target.value.match(/^[0-9a-z]{0,2}$/)) {
+        setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+          values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+            stencilFuncMask: parseInt("0x" + (e.target.value || "00"), 16)
+          })
+        }));
+      }
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", "0x" + materialProps.values.stencilFuncMask.toString(16), "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilFail:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.stencilFail,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          stencilFail: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroStencilOp"
+  }, "ZeroStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "KeepStencilOp"
+  }, "KeepStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ReplaceStencilOp"
+  }, "ReplaceStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementStencilOp"
+  }, "IncrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementStencilOp"
+  }, "DecrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementWrapStencilOp"
+  }, "IncrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementWrapStencilOp"
+  }, "DecrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "InvertStencilOp"
+  }, "InvertStencilOp")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.stencilFail, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilZFail:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.stencilZFail,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          stencilZFail: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroStencilOp"
+  }, "ZeroStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "KeepStencilOp"
+  }, "KeepStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ReplaceStencilOp"
+  }, "ReplaceStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementStencilOp"
+  }, "IncrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementStencilOp"
+  }, "DecrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementWrapStencilOp"
+  }, "IncrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementWrapStencilOp"
+  }, "DecrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "InvertStencilOp"
+  }, "InvertStencilOp")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.stencilZFail, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "stencilZPass:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.stencilZPass,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          stencilZPass: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ZeroStencilOp"
+  }, "ZeroStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "KeepStencilOp"
+  }, "KeepStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "ReplaceStencilOp"
+  }, "ReplaceStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementStencilOp"
+  }, "IncrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementStencilOp"
+  }, "DecrementStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "IncrementWrapStencilOp"
+  }, "IncrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DecrementWrapStencilOp"
+  }, "DecrementWrapStencilOp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "InvertStencilOp"
+  }, "InvertStencilOp")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.stencilZPass, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "fog:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.fog,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          fog: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.fog + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "polygonOffset:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.polygonOffset,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          polygonOffset: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.polygonOffset + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "polygonOffsetFactor:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.polygonOffsetFactor,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref9) {
+      var value = _ref9.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          polygonOffsetFactor: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.polygonOffsetFactor, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "polygonOffsetUnits:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: materialProps.values.polygonOffsetUnits,
+    type: "range",
+    min: "0",
+    max: "100",
+    step: "1",
+    onChange: function onChange(_ref10) {
+      var value = _ref10.target.value;
+      setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          polygonOffsetUnits: parseFloat(value)
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.polygonOffsetUnits, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "precision:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.values.precision,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          precision: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "highp"
+  }, "highp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "mediump"
+  }, "mediump"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "lowp"
+  }, "lowp")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.precision, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "premultipliedAlpha:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.premultipliedAlpha,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          premultipliedAlpha: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.premultipliedAlpha + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "dithering:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.dithering,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          dithering: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.dithering + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "shadowSide:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.shadowSide,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          shadowSide: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "FrontSide"
+  }, "FrontSide"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "BackSide"
+  }, "BackSide"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DoubleSide"
+  }, "DoubleSide")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.shadowSide, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "side:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: materialProps.constants.side,
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        constants: _objectSpread(_objectSpread({}, materialProps.constants), {}, {
+          side: e.target.value
+        })
+      }));
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "FrontSide"
+  }, "FrontSide"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "BackSide"
+  }, "BackSide"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "DoubleSide"
+  }, "DoubleSide")), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.constants.side, "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "toneMapped:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.toneMapped,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          toneMapped: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.toneMapped + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "vertexColors:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.vertexColors,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          vertexColors: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.vertexColors + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "visible:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: materialProps.values.visible,
+    type: "checkbox",
+    onChange: function onChange(e) {
+      return setMaterialProps(_objectSpread(_objectSpread({}, materialProps), {}, {
+        values: _objectSpread(_objectSpread({}, materialProps.values), {}, {
+          visible: e.target.checked
+        })
+      }));
+    }
+  }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "show-value"
+  }, "[", materialProps.values.visible + '', "]"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
 });
 
 /***/ }),
